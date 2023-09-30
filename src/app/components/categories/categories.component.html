@@ -1,1 +1,12 @@
-<p>categories works!</p>
+<button class="btn btn-success">Add Category</button>
+<div class="row">
+  <div class="col-4 mb-2 p-4" *ngFor="let category of categories">
+    <img [src]="getImage(category.photo)" class="w-100" alt={{category.name}} />
+    <h5 class="card-title">{{ category.name }}</h5>
+    <p class="card-text">{{ category.title}}</p>
+    <div class="text-center d-flex justify-content-between">
+      <button class="btn btn-danger" (click)="deleteCategory(category._id)">Delete</button>
+      <button class="btn btn-warning">Update</button>
+    </div>
+  </div>
+</div>
