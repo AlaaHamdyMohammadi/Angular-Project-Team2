@@ -1,1 +1,240 @@
-<p>header works!</p>
+<!-- Default Nav -->
+<!-- class="navbar navbar-expand-lg  navbar-light border-bottom shadow-sm pb-0" id="mainNav" -->
+  <nav >
+    <div class="container-fluid border-bottom shadow-sm p-3">
+      <div class="navbar-brand d-flex justify-content-between">
+        <img class="text-center" routerLink="/login" src="./assets/udemy-logo.png" alt="" width="110" height="50">
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item ">
+            <a class="nav-link border-1 border m-2 p-2" href="#" routerLink="/courses" routerLinkActive="activeLink">Courses</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link border-1 border m-2 p-2" href="#" routerLink="/users" routerLinkActive="activeLink">Users</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link border-1 border m-2 p-2" href="#" routerLink="/categories" routerLinkActive="activeLink">Categories</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link border-1 border m-2 p-2" href="#" routerLink="/subCategories" routerLinkActive="activeLink">SubCategories</a>
+          </li>
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- <div class="dropdown pe-4">
+          <span type="button" class="dropdown" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+            Categories
+          </span>
+          <ul class="dropdown-menu pt-0 mt-4" aria-labelledby="dropdownMenuButton">
+            <div class="btn-group dropend">
+              <button type="button" class="btn btn-light drop1">
+                Software
+              </button>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split drop1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropend</span>
+              </button>
+              <ul class="dropdown-menu menu1">
+                <li class="dropdown-item">IT Certificates</li>
+                <li class="dropdown-item">Network</li>
+                <li class="dropdown-item">other IT & Software</li>
+              </ul>
+            </div>
+            <div class="btn-group dropend">
+              <button type="button" class="btn btn-light drop1">
+                Business
+              </button>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split drop1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropend</span>
+              </button>
+              <ul class="dropdown-menu menu1">
+                <li class="dropdown-item">Management</li>
+                <li class="dropdown-item">Sales</li>
+                <li class="dropdown-item">Business Strategy</li>
+              </ul>
+            </div>
+            <div class="btn-group dropend">
+              <button type="button" class="btn btn-light drop1 pe-4">
+                Design
+              </button>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split drop1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropend</span>
+              </button>
+              <ul class="dropdown-menu menu1">
+                <li class="dropdown-item">Web Design</li>
+                <li class="dropdown-item">Design Tools</li>
+                <li class="dropdown-item">Game Design</li>
+              </ul>
+            </div>
+          </ul>
+        </div> -->
+        <!-- <form class="d-flex col-5">
+          <div class="input-group-text bg-light border-2 border-secondary border-end-0" id="searchDiv"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg></div>
+          <input class="form-control me-2 border-2 border-secondary p-2 border-start-0" type="search"
+            placeholder="Search for anything" aria-label="Search" id="searchInput">
+        </form> -->
+        <!-- <div class="dropdown ps-3">
+          <a href="./business.html" class="text-decoration-none text-dark">
+            <span type="button" class="dropdown pe-4" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+              aria-expanded="false">
+              Udemy Business
+            </span>
+          </a>
+          <ul class="dropdown-menu mt-4 p-2 text-center" aria-labelledby="dropdownMenuButton">
+            <div class="pe-5 position-absolute bottom-100 w-100" style="opacity: 0;">ssssssssssssssss <br>
+              ssssssssssssssss
+            </div>
+
+            <h6>Get your team access to over 22,000 top Udemy courses, anytime, anywhere.</h6>
+            <div class="d-grid gap-2">
+              <a href="./business.html">
+                <button class="btn btn-secondary w-100" type="button">Try it</button>
+              </a>
+            </div>
+          </ul>
+        </div> -->
+        <!-- <div class="dropdown ps-2">
+          <a href="./teach-on-udemy.html" class="text-decoration-none text-dark">
+            <span type="button" class="dropdown pe-4" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+              aria-expanded="false">
+              Teach on Udemy
+            </span>
+          </a>
+          <ul class="dropdown-menu mt-4 p-2 text-center" aria-labelledby="dropdownMenuButton">
+            <div class="pe-5 position-absolute bottom-100 w-100" style="opacity: 0;">ssssssssssssssss <br>
+              ssssssssssssssss
+            </div>
+            <h6>Turn what you know into an opportunity and reach millions around the world.</h6>
+            <div class="d-grid gap-2">
+              <a href="./teach-on-udemy.html">
+                <button class="btn btn-secondary w-100" type="button">Learn more</button>
+              </a>
+            </div>
+          </ul>
+        </div> -->
+        <!-- <a class="navbar-brand" href="./cart.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart3"
+            viewBox="0 0 16 16">
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+          </svg>
+        </a> -->
+        <div>
+          <!-- <a href="./logInPage.html" class="text-decoration-none">
+            <button type="button" class="btn btn-outline-secondary" id="loginBtn">Log in</button>
+          </a> -->
+
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Small Screen NAV -->
+  <!-- <nav class="navbar navbar-expand-lg navbar-light border-bottom shadow-sm" id="responsiveNav">
+    <div class="container-fluid">
+      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+        </svg>
+      </button>
+      <div class="offcanvas offcanvas-start p-3" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="text-end">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-header row">
+          <div class="row pb-3">
+            <a href="./logInPage.html" class="list-group-item border-0">Log in</a>
+            <a href="./signUpPage.html" class="list-group-item border-0">Sign up</a>
+          </div>
+          <hr>
+          <div class="dropdown pe-4">
+            <span type="button" class="dropdown" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+              aria-expanded="false">
+              Categories
+
+            </span>
+            <ul class="dropdown-menu row row-cols" aria-labelledby="dropdownMenuButton">
+              <div class="btn-group dropend">
+                <button type="button" class="btn btn-light drop1">
+                  Software
+                </button>
+                <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split drop1"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropend</span>
+                </button>
+                <ul class="dropdown-menu menu1">
+                  <li class="dropdown-item">IT Certificates</li>
+                  <li class="dropdown-item">Network</li>
+                  <li class="dropdown-item">other IT & Software</li>
+                </ul>
+              </div>
+              <div class="btn-group dropend">
+                <button type="button" class="btn btn-light drop1">
+                  Business
+                </button>
+                <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split drop1"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropend</span>
+                </button>
+                <ul class="dropdown-menu menu1">
+                  <li class="dropdown-item">Management</li>
+                  <li class="dropdown-item">Sales</li>
+                  <li class="dropdown-item">Business Strategy</li>
+                </ul>
+              </div>
+              <div class="btn-group dropend">
+                <button type="button" class="btn btn-light drop1 pe-4">
+                  Design
+                </button>
+                <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split drop1"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropend</span>
+                </button>
+                <ul class="dropdown-menu menu1">
+                  <li class="dropdown-item">Web Design</li>
+                  <li class="dropdown-item">Design Tools</li>
+                  <li class="dropdown-item">Game Design</li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+          <div class="row">
+            <a href="./business.html" class="list-group-item border-0">Udemy Business</a>
+            <a href="./teach-on-udemy.html" class="list-group-item border-0">Teach on Udemy</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a class="navbar-brand" href="#">
+          <img src="./imgs/homePage/udemy-logo.png" alt="" width="110" height="50">
+        </a>
+      </div>
+      <div>
+        <a class="navbar-brand" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </a>
+        <a class="navbar-brand" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart3"
+            viewBox="0 0 16 16">
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav> -->
