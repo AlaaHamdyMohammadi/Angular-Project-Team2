@@ -1,1 +1,145 @@
-<p>login-page works!</p>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container button {
+    width: 400px;
+    text-align: left;
+    border: 1px solid black !important;
+    margin: 10px;
+  }
+  .container button .google {
+    color: #ea4335;
+    padding-right: 10px;
+  }
+  .container button .face {
+    color: #1877f2;
+    padding-right: 10px;
+  }
+  .container button .google {
+    color: #ea4335;
+    padding-right: 10px;
+  }
+  .container button .apple {
+    padding-right: 10px;
+  }
+  .formLogin {
+    margin-left: 1%;
+    margin-top: 2%;
+  }
+  .container form input {
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 0;
+  }
+  .container form input::placeholder {
+    color: black;
+    font-weight: bold;
+  }
+
+  .container .logIn {
+    background-color: #a435f0;
+    border: none !important;
+  }
+  .container .logIn:hover {
+    background-color: #8217ca;
+    border: none !important;
+  }
+  .container a {
+    color: #5624d0;
+  }
+  .container .paragraph {
+    border-bottom: 1px solid gray;
+    width: 35%;
+    padding-bottom: 10px;
+  }
+</style>
+
+<div
+  class="container formLogin text-center d-flex flex-column align-items-center"
+>
+  <h6 class="mb-3">Log in to your Udemy account</h6>
+  <!-- <button class="p-2 fs-5 fw-bold bg-white border-0">
+            <i class="google fs-3 fa-brands fa-google"></i>
+            Continue with Google
+        </button>
+        <button class="p-2 fs-5 fw-bold bg-white border-0">
+            <i class="face fs-3 fa-brands fa-facebook"></i>
+            Continue with Facebook
+        </button>
+        <button class="p-2 fs-5 fw-bold bg-white border-0">
+            <i class="apple fs-3 fa-brands fa-apple"></i>
+            Continue with Apple
+        </button> -->
+  <!-- <form [formGroup]="loginForm">
+    <div class="mb-3">
+      <input
+        formControlName="email"
+        [ngClass]="{
+          'is-invalid': (email?.touched || email?.dirty) && email?.invalid
+        }"
+        type="email"
+        class="form-control p-3 fs-5"
+        id="inputEmail"
+        placeholder="Email"
+      />
+      <span class="invalid-feedback">
+        <span *ngIf="email?.errors?.['required']">Invalid Email</span>
+      </span>
+    </div>
+
+    <div class="mb-2">
+      <input
+        formControlName="password"
+        [ngClass]="{
+          'is-invalid':
+            (password?.touched || password?.dirty) && password?.invalid
+        }"
+        type="password"
+        class="form-control p-3 fs-5"
+        id="inputPassword"
+        placeholder="Password"
+      />
+      <span class="invalid-feedback">
+        <span *ngIf="password?.errors?.['required']">Invalid Password</span>
+      </span>
+    </div>
+  </form> -->
+
+  <form [formGroup]="loginForm">
+    <div class="mb-3">
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control p-3 fs-5"
+        id="inputEmail"
+        placeholder="Email"
+      />
+    </div>
+
+    <div class="mb-2">
+      <input
+        formControlName="password"
+        type="password"
+        class="form-control p-3 fs-5"
+        id="inputPassword"
+        placeholder="Password"
+      />
+    </div>
+  </form>
+  <button
+    (click)="login()"
+    type="submit"
+    class="logIn p-3 fs-5 fw-bold text-center text-white"
+  >
+    Log in
+  </button>
+  <!-- <p class="paragraph p-3">
+    or <a class="fw-bold" href="#">Forget Password</a>
+  </p> -->
+  <!-- <p class="paragraph2 p-3">Don't have an account? <a class="fw-bold" href="#">Sign up</a></p> -->
+  <!-- <p class="paragraph2"><a class="fw-bold" href="#">Log in with your organization</a></p> -->
+</div>
+<!-- <h3>{{ loginForm.value | json }}</h3> -->
