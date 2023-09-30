@@ -1,1 +1,11 @@
-<p>users works!</p>
+<button class="btn btn-success">Add User</button>
+<div class="row">
+  <div class="col-4 mb-2 p-4" *ngFor="let user of users">
+    <img [src]="getImage(user.photo)" class="w-100 rounded-pill" alt={{user.username}} />
+    <h5 class="card-title mt-4 mb-4">{{ user.username }}</h5>
+    <p class="card-text">{{ user.email }}</p>
+    <div class="text-center d-flex justify-content-between">
+      <button class="btn btn-danger w-100" (click)="deleteUser(user._id)">Delete</button>
+    </div>
+  </div>
+</div>
