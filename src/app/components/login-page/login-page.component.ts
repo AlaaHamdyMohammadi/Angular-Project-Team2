@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Login } from 'src/app/Models/login';
+import { Login, LoginResponse } from 'src/app/Models/login';
 import { LoginService } from 'src/app/Services/login.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 /*
 data => {
@@ -27,6 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
 })
 export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;
+  //adminLogin: boolean = false;
 
   // constructor(
   //   private formBilder: FormBuilder,
@@ -47,11 +50,15 @@ export class LoginPageComponent implements OnInit {
   constructor(
     private formBilder: FormBuilder,
     private loginServ: LoginService,
-    private toaster: ToastrService
-  ) {}
+    private spinner: NgxSpinnerService,
+    private toaster: ToastrService,
+    private router: Router
+  ) {
+  }
 
   ngOnInit(): void {
     this.createForm();
+    //this.adminLogin = this.loginServ.isLogin;
   }
 
   createForm() {
@@ -70,11 +77,23 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
-    this.loginServ.login(this.loginForm.value).subscribe(data => {
-      this.toaster.success('Success', 'Login Success');
-    },error => {
-      this.toaster.error(error.error);
-    });
-    console.log(this.loginForm.value);
+    this.spinner.show();
+    this.loginServ.login(this.loginForm.value).subscribe(
+      (data: any) => {
+        localStorage.setItem('token', data.token);
+        this.toaster.success('Successfully logged in');
+        this.router.navigate(['/courses']);
+        this.spinner.hide();
+      },
+      (error) => {
+        this.toaster.error('Login failed. Please check your credentials.');
+        this.spinner.hide();
+      }
+    );
+    //console.log(this.loginForm.value);
   }
+
+  // logout(){
+  //   this.loginServ.logout()
+  // }
 }

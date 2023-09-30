@@ -17,8 +17,10 @@ export class UsersService {
   }
 
   getAllUsers(): Observable<iUser[]> {
+    let headers = new HttpHeaders();
+    headers.append('Authorization', 'Bearer ' + localStorage.getItem('token'));
     return this.httpClient
-      .get<iUser>(`${environment.BaseApiURL}/users`)
+      .get<iUser>(`${environment.BaseApiURL}/users`, { headers })
       .pipe(map((res: any) => res.data.documents));
   }
 

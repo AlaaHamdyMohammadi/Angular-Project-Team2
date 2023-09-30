@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { iUser } from 'src/app/Models/iUser';
 import { UsersService } from 'src/app/Services/users.service';
@@ -55,12 +56,4 @@ export class UsersComponent implements OnInit {
 
 /*
 
-{
-        next: () => {
-          confirm('Successfully Deleted');
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      }
 */
