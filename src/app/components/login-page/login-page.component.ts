@@ -2,6 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Login } from 'src/app/Models/login';
 import { LoginService } from 'src/app/Services/login.service';
+import { ToastrService } from 'ngx-toastr';
+
+/*
+data => {
+      this.toaster.success('Success', 'Login Success');
+    }, error => {
+      this.toaster.error(error.error);
+
+    }
+
+    , private toaster: ToastrService
+
+        ToastrModule.forRoot(),
+import { ToastrModule } from 'ngx-toastr';
+
+
+*/
 
 @Component({
   selector: 'app-login-page',
@@ -27,7 +44,11 @@ export class LoginPageComponent implements OnInit {
   //   return this.loginForm.get('password');
   // }
 
-  constructor(private formBilder: FormBuilder, private loginServ: LoginService){};
+  constructor(
+    private formBilder: FormBuilder,
+    private loginServ: LoginService,
+    private toaster: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -49,9 +70,11 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
-    this.loginServ.login(this.loginForm.value).subscribe(
-      
-    );
+    this.loginServ.login(this.loginForm.value).subscribe(data => {
+      this.toaster.success('Success', 'Login Success');
+    },error => {
+      this.toaster.error(error.error);
+    });
     console.log(this.loginForm.value);
   }
 }

@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -30,6 +32,7 @@ import { SubCategoriesComponent } from './components/sub-categories/sub-categori
     FormsModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
+    ToastrModule.forRoot(),
     HttpClientModule,
   ],
   providers: [],
