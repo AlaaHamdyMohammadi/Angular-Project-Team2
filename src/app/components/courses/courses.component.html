@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-4 mb-2 p-4" *ngFor="let course of courses">
     <img [src]="getImage(course.photo)" class="w-100" alt={{course.title}} />
-    <h5 class="card-title">{{ course.title }}</h5>
+    <h5 class="card-title testColor">{{ course.title }}</h5>
     <p class="card-text">{{ course.price | currency }}</p>
     <div class="text-center d-flex justify-content-between">
       <button class="btn btn-danger">Delete</button>
