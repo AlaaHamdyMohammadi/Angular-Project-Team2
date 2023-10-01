@@ -1,13 +1,17 @@
 <app-header></app-header>
-<div class="container mt-5">
-  <router-outlet></router-outlet>
-  <ngx-spinner
+<body>
+  <div class="container">
+    <router-outlet></router-outlet>
+    <ngx-spinner
     bdColor="rgba(0, 0, 0, 0.8)"
     size="medium"
     color="#fff"
     type="pacman"
     [fullScreen]="true"
     ><p style="color: white">Loading...</p></ngx-spinner
-  >
+    >
 </div>
+
+</body>
 <app-footer></app-footer>
+

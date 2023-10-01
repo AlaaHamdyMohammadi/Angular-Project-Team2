@@ -1,28 +1,28 @@
 <!-- Default Nav -->
 <!-- class="navbar navbar-expand-lg  navbar-light border-bottom shadow-sm pb-0" id="mainNav" -->
   <nav >
-    <div class="container-fluid border-bottom shadow-sm p-3">
+    <div class="container-fluid border-bottom shadow-sm p-2">
       <div class="navbar-brand d-flex justify-content-between">
         <img class="text-center" routerLink="/login" src="./assets/udemy-logo.png" alt="" width="110" height="50">
         <ul class="navbar-nav d-flex flex-row">
 
           <li class="nav-item ">
-            <a class="nav-link border-1 border m-2 p-2" href="#" routerLink="/courses" routerLinkActive="activeLink">Courses</a>
+            <a class="nav-link border-2 border-dark border m-2 p-2" href="#" routerLink="/courses" routerLinkActive="activeLink">Courses</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link border-1 border m-2 p-2" href="#" routerLink="/users" routerLinkActive="activeLink">Users</a>
+            <a class="nav-link border-2 border-dark border m-2 p-2" href="#" routerLink="/users" routerLinkActive="activeLink">Users</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link border-1 border m-2 p-2" href="#" routerLink="/categories" routerLinkActive="activeLink">Categories</a>
+            <a class="nav-link border-2 border-dark border m-2 p-2" href="#" routerLink="/categories" routerLinkActive="activeLink">Categories</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link border-1 border m-2 p-2" href="#" routerLink="/subCategories" routerLinkActive="activeLink">SubCategories</a>
+            <a class="nav-link border-2 border-dark border m-2 p-2" href="#" routerLink="/subCategories" routerLinkActive="activeLink">SubCategories</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link border-1 border m-2 p-2" href="#" [hidden]="isLoggedIn" routerLink="/login" routerLinkActive="activeLink">Login</a>
+            <a class="nav-link border-2 border-dark border m-2 p-2" href="#" [hidden]="isLoggedIn" routerLink="/login" routerLinkActive="activeLink">Login</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link border-1 border m-2 p-2" href="#" [hidden]="!isLoggedIn"  (click)="logout()" routerLinkActive="activeLink">Logout</a>
+            <a class="nav-link border-2 border-dark border m-2 p-2" href="#" [hidden]="!isLoggedIn"  (click)="logout()" routerLinkActive="activeLink">Logout</a>
           </li>
         </ul>
       </div>

@@ -1,12 +1,23 @@
 <button class="btn btn-success">Add Course</button>
 <div class="row">
   <div class="col-4 mb-2 p-4" *ngFor="let course of courses">
-    <img [src]="getImage(course.photo)" class="w-100" alt={{course.title}} />
-    <h5 class="card-title testColor">{{ course.title }}</h5>
-    <p class="card-text">{{ course.price | currency }}</p>
-    <div class="text-center d-flex justify-content-between">
-      <button class="btn btn-danger" (click)="deleteCourse(course._id)">Delete</button>
-      <button class="btn btn-warning">Update</button>
+    <div class="card text-center shadow" style="width: 20rem">
+
+      <img
+        [src]="getImage(course.photo)"
+        class="w-100"
+        alt="{{ course.title }}"
+      />
+      <h5 class="card-title p-2 testColor">{{ course.title }}</h5>
+      <p class="card-text p-2">{{ course.price | currency }}</p>
+      <div class="text-center p-2 d-flex justify-content-between">
+        <button class="btn btn-danger" (click)="deleteCourse(course._id)">
+          Delete
+        </button>
+        <button class="btn btn-warning">Update</button>
+      </div>
     </div>
   </div>
 </div>
+
+
