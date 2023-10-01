@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { iCategory } from 'src/app/Models/iCategory';
 import { CategoriesService } from 'src/app/Services/categories.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,6 +16,7 @@ export class CategoriesComponent implements OnInit {
   constructor(
     private categoriesServ: CategoriesService,
     private spinner: NgxSpinnerService,
+    private toaster: ToastrService,
     private router: Router
   ) {}
   ngOnInit(): void {
@@ -37,7 +40,7 @@ export class CategoriesComponent implements OnInit {
     if (confirmDelete) {
       this.categoriesServ.deleteCategory(id).subscribe({
         next: () => {
-          confirm('Successfully Deleted');
+          this.toaster.success('Successfully Deleted');
           this.categoriesServ.getAllCategories().subscribe((data) => {
             //console.log(data);
             this.categories = data;
