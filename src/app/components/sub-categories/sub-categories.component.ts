@@ -3,6 +3,7 @@ import { iSubCategory } from 'src/app/Models/iSubCategory';
 import { SubCategoriesService } from 'src/app/Services/sub-categories.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sub-categories',
@@ -14,6 +15,7 @@ export class SubCategoriesComponent {
   constructor(
     private subCategoriesServ: SubCategoriesService,
     private spinner: NgxSpinnerService,
+    private toaster: ToastrService,
     private router: Router
   ) {}
   ngOnInit(): void {
@@ -33,7 +35,7 @@ export class SubCategoriesComponent {
     if (confirmDelete) {
       this.subCategoriesServ.deleteSubCategory(id).subscribe({
         next: () => {
-          confirm('Successfully Deleted');
+          this.toaster.success('Successfully Deleted');
           this.subCategoriesServ.getAllSubCategories().subscribe((data) => {
             //console.log(data);
             this.subCategories = data;
