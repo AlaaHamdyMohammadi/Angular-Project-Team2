@@ -5,7 +5,7 @@
     <h5 class="card-title testColor">{{ course.title }}</h5>
     <p class="card-text">{{ course.price | currency }}</p>
     <div class="text-center d-flex justify-content-between">
-      <button class="btn btn-danger">Delete</button>
+      <button class="btn btn-danger" (click)="deleteCourse(course._id)">Delete</button>
       <button class="btn btn-warning">Update</button>
     </div>
   </div>

@@ -20,4 +20,10 @@ export class CoursesService {
       `${environment.BaseApiURL}/courses/${courseId}`
     );
   }
+  deleteCourse(courseId: number): Observable<void> {
+    console.log('service', courseId);
+    return this.httpClient.delete<void>(
+      `${environment.BaseApiURL}/courses/${courseId}`
+    );
+  }
 }
