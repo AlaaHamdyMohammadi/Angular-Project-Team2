@@ -6,21 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 
-/*
-data => {
-      this.toaster.success('Success', 'Login Success');
-    }, error => {
-      this.toaster.error(error.error);
 
-    }
-
-    , private toaster: ToastrService
-
-        ToastrModule.forRoot(),
-import { ToastrModule } from 'ngx-toastr';
-
-
-*/
 
 @Component({
   selector: 'app-login-page',
@@ -53,8 +39,7 @@ export class LoginPageComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private toaster: ToastrService,
     private router: Router
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.createForm();

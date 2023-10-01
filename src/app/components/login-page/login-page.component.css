@@ -1,0 +1,5 @@
+.textbox:focus ~ .form-label,
+.textbox:not(:placeholder-shown).textbox:not(:focus) ~ .form-label {
+  top: 0.3rem;
+  font-size: 15px;
+}

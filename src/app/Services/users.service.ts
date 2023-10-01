@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { iUser } from '../Models/iUser';
 import { environment } from 'src/environments/environment.development';
-
+ 
 @Injectable({
   providedIn: 'root',
 })
@@ -17,10 +17,8 @@ export class UsersService {
   }
 
   getAllUsers(): Observable<iUser[]> {
-    let headers = new HttpHeaders();
-    headers.append('Authorization', 'Bearer ' + localStorage.getItem('token'));
     return this.httpClient
-      .get<iUser>(`${environment.BaseApiURL}/users`, { headers })
+      .get<iUser>(`${environment.BaseApiURL}/users`)
       .pipe(map((res: any) => res.data.documents));
   }
 

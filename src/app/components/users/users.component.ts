@@ -4,6 +4,8 @@ import { iUser } from 'src/app/Models/iUser';
 import { UsersService } from 'src/app/Services/users.service';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-users',
@@ -17,6 +19,7 @@ export class UsersComponent implements OnInit {
   constructor(
     private usersServ: UsersService,
     private spinner: NgxSpinnerService,
+    private toaster: ToastrService,
     private router: Router
   ) {}
   ngOnInit(): void {
@@ -38,7 +41,7 @@ export class UsersComponent implements OnInit {
     if (confirmDelete) {
       this.usersServ.deleteUser(id).subscribe({
         next: () => {
-          confirm('Successfully Deleted');
+          this.toaster.success('Successfully Deleted');
           this.usersServ.getAllUsers().subscribe((data) => {
             this.users = data;
             //console.log('Done');
