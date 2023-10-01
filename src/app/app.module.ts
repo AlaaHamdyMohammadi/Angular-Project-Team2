@@ -15,6 +15,10 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { SubCategoriesComponent } from './components/sub-categories/sub-categories.component';
 import { InterceptorService } from './Services/interceptor.service';
+import { AddCategoryComponent } from './components/categories/add-category/add-category.component';
+import { UpdateCategoryComponent } from './components/categories/update-category/update-category.component';
+import { AddSubCategoryComponent } from './components/sub-categories/add-sub-category/add-sub-category.component';
+import { UpdateSubCategoryComponent } from './components/sub-categories/update-sub-category/update-sub-category.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { InterceptorService } from './Services/interceptor.service';
     CoursesComponent,
     CategoriesComponent,
     SubCategoriesComponent,
+    AddCategoryComponent,
+    UpdateCategoryComponent,
+    AddSubCategoryComponent,
+    UpdateSubCategoryComponent,
   ],
   imports: [
     BrowserModule,
