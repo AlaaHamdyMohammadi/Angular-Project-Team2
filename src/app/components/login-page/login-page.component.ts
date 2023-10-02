@@ -69,7 +69,7 @@ export class LoginPageComponent implements OnInit {
         this.toaster.success('Successfully logged in');
         this.router.navigate(['/courses']);
         this.spinner.hide();
-      },
+      }, 
       (error) => {
         this.toaster.error('Login failed. Please check your credentials.');
         this.spinner.hide();

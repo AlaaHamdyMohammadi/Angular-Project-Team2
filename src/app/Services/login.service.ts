@@ -17,10 +17,12 @@ export class LoginService {
   get isLogin(): boolean{
     return(localStorage.getItem('token')) ? true : false;
   }
-
+ 
 
   login(model: Login) {
+    this.isLoginBehavior.next(true);
     return this.httpClient.post(`${environment.BaseApiURL}/users/login`, model);
+
   }
 
   logout(){
