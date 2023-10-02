@@ -1,0 +1,15 @@
+.editBtn{
+  background-color: rgb(137, 71, 199);
+  height: 50px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.editBtn:hover{
+  transform: scale(.9);
+}
+
+.inputEdit{
+  border-radius: 0%;
+  border-color: black;
+}

@@ -21,7 +21,6 @@ export class CategoriesComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.spinner.show();
-
     this.categoriesServ.getAllCategories().subscribe((data) => {
       //console.log(data);
       this.categories = data;
@@ -50,5 +49,16 @@ export class CategoriesComponent implements OnInit {
       //console.log('component', id);
       this.router.navigate(['/categories']);
     }
+  }
+
+
+
+  addCategoryComp() {
+    this.router.navigate(['AddCategory/']);
+  }
+
+  updateCategoryComp(itemid: number) {
+    console.log(itemid);
+    this.router.navigate([`UpdateCategory/${itemid}`]);
   }
 }

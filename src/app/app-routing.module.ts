@@ -6,6 +6,8 @@ import { UsersComponent } from './components/users/users.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { SubCategoriesComponent } from './components/sub-categories/sub-categories.component';
 import { adminGuard } from './Guards/admin.guard';
+import { AddCategoryComponent } from './components/categories/add-category/add-category.component';
+import { UpdateSubCategoryComponent } from './components/sub-categories/update-sub-category/update-sub-category.component';
 
 
 const routes: Routes = [
@@ -27,6 +29,18 @@ const routes: Routes = [
     path: 'categories',
     component: CategoriesComponent,
     title: 'Categories Page',
+    canActivate: [adminGuard],
+  },
+  {
+    path: 'AddCategory',
+    component: AddCategoryComponent,
+    title: 'Add Category Page',
+    canActivate: [adminGuard],
+  },
+  {
+    path: 'UpdateCategory/:categoryId',
+    component: UpdateSubCategoryComponent,
+    title: 'Update Category Page',
     canActivate: [adminGuard],
   },
   {

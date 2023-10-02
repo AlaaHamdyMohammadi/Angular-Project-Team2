@@ -1,5 +1,5 @@
 import { environment } from 'src/environments/environment.development';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { iCategory } from '../Models/iCategory';
@@ -8,7 +8,13 @@ import { iCategory } from '../Models/iCategory';
   providedIn: 'root',
 })
 export class CategoriesService {
-  constructor(private httpClient: HttpClient) {}
+  http = {};
+
+  constructor(private httpClient: HttpClient) {
+    this.http = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    };
+  }
 
   getAllCategories(): Observable<iCategory[]> {
     return this.httpClient
@@ -20,6 +26,29 @@ export class CategoriesService {
     console.log('service', categoryId);
     return this.httpClient.delete<void>(
       `${environment.BaseApiURL}/categories/${categoryId}`
+    );
+  }
+
+  // createCategory(newCategory: FormData): Observable<any> {
+  //   return this.httpClient.post<any>(
+  //     `${environment.BaseApiURL}/categories`,
+  //     newCategory
+  //   );
+  // }
+
+  createCategory(newCategory: iCategory): Observable<iCategory> {
+    return this.httpClient.post<iCategory>(
+      `${environment.BaseApiURL}/categories`,
+      JSON.stringify(newCategory),
+      this.http
+    );
+  }
+
+  updateCategory(updateCategory: iCategory) {
+    return this.httpClient.patch<iCategory>(
+      `${environment.BaseApiURL}/categories/${updateCategory._id}`,
+      JSON.stringify(updateCategory),
+      this.http
     );
   }
 }

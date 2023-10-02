@@ -1,3 +1,14 @@
-.card img{
-  height: 20%;
+.card img {
+  height: 10%;
+}
+
+.add {
+  background-color: #a435f0;
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+.add:hover {
+  background-color: #8217ca;
 }
