@@ -1,9 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { iUser } from '../Models/iUser';
 import { environment } from 'src/environments/environment.development';
- 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -16,9 +16,10 @@ export class UsersService {
     };
   }
 
-  getAllUsers(): Observable<iUser[]> {
+  getAllUsers(page: number=1, limit=15): Observable<iUser[]> {
+    const params = new HttpParams().set('page', page.toString()).set('limit', limit.toString());
     return this.httpClient
-      .get<iUser>(`${environment.BaseApiURL}/users`)
+      .get<iUser>(`${environment.BaseApiURL}/users`, {params})
       .pipe(map((res: any) => res.data.documents));
   }
 
