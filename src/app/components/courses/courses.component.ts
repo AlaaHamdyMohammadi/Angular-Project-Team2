@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CoursesComponent implements OnInit {
   courses: ICourse[] = [];
+  page: number = 1;
   constructor(
     private coursesServ: CoursesService,
     private spinner: NgxSpinnerService,
@@ -20,11 +21,37 @@ export class CoursesComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.spinner.show();
-    this.coursesServ.getAllCourses().subscribe((data) => {
+    // this.coursesServ.getAllCourses(this.page).subscribe((data) => {
+    //   //console.log(data);
+    //   this.courses = data;
+    //   this.spinner.hide();
+    // });
+    this.coursesPage();
+  }
+
+  coursesPage() {
+    this.coursesServ.getAllCourses(this.page).subscribe((data) => {
       //console.log(data);
       this.courses = data;
       this.spinner.hide();
     });
+  }
+
+  // pageChange(newPage: number) {
+  //   this.page = newPage;
+  //   this.coursesPage;
+  // }
+
+  nextPage(){
+        this.spinner.show();
+        this.page++;
+        this.coursesPage();
+  };
+
+  prevPage(){
+    this.spinner.show();
+    this.page--;
+    this.coursesPage();
   }
 
   getImage(photo: string): string {

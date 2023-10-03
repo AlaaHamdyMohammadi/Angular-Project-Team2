@@ -10,11 +10,12 @@
 }
 
 .editBtn{
+  transform: none;
   transition: 0.1s all;
 }
 
 .editBtn:hover{
-  transform: scale(0.8);
+  transform: scale(0.95) translateZ(0px);
   transition: 0.1s all;
 }
 

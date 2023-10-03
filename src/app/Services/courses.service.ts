@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { ICourse } from '../Models/iCourse';
@@ -10,9 +10,10 @@ import { environment } from 'src/environments/environment.development';
 export class CoursesService {
   constructor(private httpClient: HttpClient) {}
 
-  getAllCourses(): Observable<ICourse[]> {
+  getAllCourses(page: number = 1, limit: number = 15): Observable<ICourse[]> {
+    const params = new HttpParams().set('page', page.toString()).set('limit', limit.toString())
     return this.httpClient
-      .get<ICourse[]>(`${environment.BaseApiURL}/courses`)
+      .get<ICourse[]>(`${environment.BaseApiURL}/courses`, {params})
       .pipe(map((res: any) => res.data.courses));
   }
   getCourseById(courseId: number): Observable<ICourse> {
