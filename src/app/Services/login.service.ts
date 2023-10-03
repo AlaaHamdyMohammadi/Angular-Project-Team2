@@ -22,7 +22,6 @@ export class LoginService {
   login(model: Login) {
     this.isLoginBehavior.next(true);
     return this.httpClient.post(`${environment.BaseApiURL}/users/login`, model);
-
   }
 
   logout(){

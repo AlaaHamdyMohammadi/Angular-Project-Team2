@@ -8,3 +8,16 @@
 .add:hover {
   background-color: #8217ca;
 }
+
+.editBtn{
+  transition: 0.1s all;
+}
+
+.editBtn:hover{
+  transform: scale(0.8);
+  transition: 0.1s all;
+}
+
+.imgHeight{
+  
+}
