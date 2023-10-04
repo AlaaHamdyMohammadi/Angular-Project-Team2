@@ -10,7 +10,7 @@ export interface ICourse {
   updated?: string;
   instructor: string;
   content: string;
-
+  Level: string;
   rating: number;
   duration: number;
   DiscountPrice: number;

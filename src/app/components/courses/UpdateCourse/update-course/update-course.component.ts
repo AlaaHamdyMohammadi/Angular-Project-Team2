@@ -126,6 +126,7 @@ export class UpdateCourseComponent {
     this.formData.append('resources', formDatae.value.resources);
     this.formData.append('exercises', formDatae.value.exercises);
     this.formData.append('sections', formDatae.value.sections);
+    this.formData.append('Level', formDatae.value.Level);
     this.formData.append('categoryId', formDatae.value.categoryId);
     this.formData.append('subCategory', formDatae.value.subCategory);
 

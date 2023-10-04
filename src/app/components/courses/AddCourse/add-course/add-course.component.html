@@ -15,7 +15,7 @@
             #formDatae="ngForm"
           >
             <div class="col-xl-6 col-lg-6 col-md-12">
-              <div class="form-group text-dark">
+              <div class="text-dark">
                 <label class="text-dark fw-bold" for="title"
                   >Course Title
                 </label>
@@ -23,7 +23,7 @@
                   id="title"
                   name="title"
                   type="text"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.title"
                   #title="ngModel"
                   [ngClass]="{
@@ -50,7 +50,7 @@
                   id="name"
                   name="subTitle"
                   type="text"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="form-control mb-2 inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.subTitle"
                   required
                   #SubTitle="ngModel"
@@ -76,7 +76,7 @@
                   id="name"
                   name="instructor"
                   type="text"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.instructor"
                   required
                   #instructor="ngModel"
@@ -105,7 +105,7 @@
                   id="name"
                   name="BestSeller"
                   type="text"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.BestSeller"
                 />
 
@@ -114,7 +114,7 @@
                   id="name"
                   name="rating"
                   type="number"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.rating"
                   required
                   #rating="ngModel"
@@ -138,7 +138,7 @@
                   id="name"
                   name="NumRating"
                   type="number"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.NumRating"
                   required
                   #NumRating="ngModel"
@@ -162,7 +162,7 @@
                   id="name"
                   name="duration"
                   type="number"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.duration"
                   required
                   #duration="ngModel"
@@ -179,12 +179,12 @@
                   </span>
                 </span>
               </div>
-              <div class="form-group mb-3">
+              <div class="">
                 <label class="text-dark fw-bold" for="description"
                   >Description</label
                 >
                 <textarea
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="form-control mb-2 inputEdit border border-1 border-black validate"
                   name="description"
                   rows="3"
                   required
@@ -213,7 +213,7 @@
                   >content</label
                 >
                 <textarea
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   rows="3"
                   name="content"
                   required
@@ -233,11 +233,11 @@
                   </span>
                 </span>
               </div>
-              <div class="form-group mb-3">
+              <div class="mb-2">
                 <label class="text-dark fw-bold" for="category">Category</label>
                 <select
                   class="custom-select inputEdit border border-1 border-black tm-select-accounts"
-                  id="category"
+                 id="category"
                   (change)="onOptionChange($event)"
                   [(ngModel)]="Course.categoryId"
                   name="categoryId"
@@ -251,6 +251,27 @@
                   </option>
                 </select>
               </div>
+              <div class="mb-2">
+                  <label class="text-dark fw-bold" for="SubCategory"
+                    >SubCategory</label
+                  >
+                  <select
+                    class="custom-select inputEdit border border-1 border-black tm-select-accounts"
+                    id="SubCategory"
+                    (change)="onOptionChangeSUB($event)"
+                    [(ngModel)]="Course.subCategory"
+                    name="subCategory"
+                  >
+                    >
+                    <option selected>Select SubCategory</option>
+                    <option
+                      value="{{ SubCategory._id }}"
+                      *ngFor="let SubCategory of Subcategories"
+                    >
+                      {{ SubCategory.name }}
+                    </option>
+                  </select>
+                </div>
             </div>
 
             <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
@@ -267,7 +288,7 @@
                   (change)="selectImage($event)"
                 /> -->
               </div>
-              <div class="mt-3 mb-3">
+              <div class="mt-4 mb-2">
                 <!-- <input id="fileInput" type="file" style="display:none;" /> -->
                 <input
                   type="file"
@@ -283,7 +304,7 @@
                   id="name"
                   name="priceType"
                   type="text"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.priceType"
                   required
                   #priceType="ngModel"
@@ -306,7 +327,7 @@
                   id="name"
                   name="price"
                   type="number"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.price"
                   required
                   #price="ngModel"
@@ -330,7 +351,7 @@
                   id="name"
                   name="DiscountPrice"
                   type="number"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.DiscountPrice"
                   required
                   #DiscountPrice="ngModel"
@@ -355,7 +376,7 @@
                   id="name"
                   name="percentageDis"
                   type="number"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.percentageDis"
                   required
                   #percentageDis="ngModel"
@@ -378,7 +399,7 @@
                   id="name"
                   name="lectures"
                   type="number"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.lectures"
                   required
                   #lectures="ngModel"
@@ -400,7 +421,7 @@
                   id="name"
                   name="articles"
                   type="number"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.articles"
                   required
                   #articles="ngModel"
@@ -422,7 +443,7 @@
                   id="name"
                   name="resources"
                   type="number"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.resources"
                   required
                   #resources="ngModel"
@@ -445,7 +466,7 @@
                   id="name"
                   name="exercises"
                   type="number"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.exercises"
                   required
                   #exercises="ngModel"
@@ -468,7 +489,7 @@
                   id="name"
                   name="sections"
                   type="number"
-                  class="form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.sections"
                   required
                   #sections="ngModel"
@@ -484,27 +505,23 @@
                     >Please enter numbrer of sections
                   </span>
                 </span>
-                <div class="form-group mb-3">
-                  <label class="text-dark fw-bold" for="SubCategory"
-                    >SubCategory</label
-                  >
-                  <select
-                    class="custom-select inputEdit border border-1 border-black tm-select-accounts"
-                    id="SubCategory"
-                    (change)="onOptionChangeSUB($event)"
-                    [(ngModel)]="Course.subCategory"
-                    name="subCategory"
-                  >
-                    >
-                    <option selected>Select SubCategory</option>
-                    <option
-                      value="{{ SubCategory._id }}"
-                      *ngFor="let SubCategory of Subcategories"
-                    >
-                      {{ SubCategory.name }}
-                    </option>
-                  </select>
-                </div>
+
+                <label class="text-dark fw-bold" for="name">Level</label>
+                <input
+                  id="name"
+                  name="Level"
+                  type="text"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.Level"
+                  required
+                  #Level="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (Level.touched || Level.dirty) &&
+                      Level.invalid
+                  }"
+                  placeholder="Level (required)"
+                />
               </div>
             </div>
             <div class="row">

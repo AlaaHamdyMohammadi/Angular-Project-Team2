@@ -121,6 +121,7 @@ export class AddCourseComponent {
     this.formData.append('price', formDatae.value.price);
     this.formData.append('DiscountPrice', formDatae.value.DiscountPrice);
     this.formData.append('percentageDis', formDatae.value.percentageDis);
+    this.formData.append('Level', formDatae.value.Level);
     this.formData.append('lectures', formDatae.value.lectures);
     this.formData.append('articles', formDatae.value.articles);
     this.formData.append('resources', formDatae.value.resources);
