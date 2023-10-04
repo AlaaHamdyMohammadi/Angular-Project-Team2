@@ -40,14 +40,14 @@ button:focus {
   font-weight: 700;
   color: #fff;
 }
-.navbar {
+/* .navbar {
   height: 100px;
   background-color: #567086;
   padding: 0;
-}
-.navbar .container {
+} */
+/* .navbar .container {
   position: relative;
-}
+} */
 .tm-logout-icon {
   font-size: 1.5em;
 }
@@ -96,7 +96,7 @@ button:focus {
   color: #fff;
   margin-bottom: 30px;
 }
-.nav-link {
+/* .nav-link {
   color: #fff;
   height: 100%;
   display: flex;
@@ -104,12 +104,12 @@ button:focus {
   justify-content: center;
   flex-direction: column;
   font-size: 90%;
-}
-.nav-link > i {
+} */
+/* .nav-link > i {
   margin-bottom: 10px;
   margin-right: 0;
   font-size: 1.5rem;
-}
+} */
 .dropdown-item,
 .nav-link {
   padding: 15px 20px;
@@ -127,7 +127,7 @@ button:focus {
   color: #fff;
   padding: 15px 30px;
 }
-.navbar-nav .active > .nav-link,
+/* .navbar-nav .active > .nav-link,
 .navbar-nav .nav-link.active {
   background-color: #f5a623;
   color: #fff;
@@ -142,7 +142,7 @@ button:focus {
 .navbar-nav a:hover,
 .navbar-nav a:hover i {
   color: #f5a623;
-}
+} */
 .nav-item {
   text-align: center;
 }
