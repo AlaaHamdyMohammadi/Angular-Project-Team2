@@ -32,13 +32,13 @@ export class CoursesComponent implements OnInit {
     });
   }
 
-  nextPage(){
-        this.spinner.show();
-        this.page++;
-        this.coursesPage();
-  };
+  nextPage() {
+    this.spinner.show();
+    this.page++;
+    this.coursesPage();
+  }
 
-  prevPage(){
+  prevPage() {
     this.spinner.show();
     this.page--;
     this.coursesPage();
@@ -46,6 +46,16 @@ export class CoursesComponent implements OnInit {
 
   getImage(photo: string): string {
     return `http://127.0.0.1:4000/img/courses/${photo}`;
+  }
+
+  AddCourseCOMP() {
+    this.router.navigate(['AddCourse/']);
+  }
+
+  updateCourseCOMP(itemid: number) {
+    console.log(itemid);
+
+    this.router.navigate([`UpdateCourse/${itemid}`]);
   }
 
   deleteCourse(id: number) {
