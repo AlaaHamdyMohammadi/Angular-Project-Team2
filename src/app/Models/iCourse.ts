@@ -1,29 +1,29 @@
 export interface ICourse {
   _id: number;
-  title: String;
-  subTitle: String;
+  title: string;
+  subTitle: string;
   price: number;
-  description: String;
-  priceType: String;
-  BestSeller: String;
+  description: string;
+  priceType: string;
+  BestSeller: string;
   photo: any;
-  updated?: String;
-  instructor: String;
-  content: String;
+  updated?: string;
+  instructor: string;
+  content: string;
 
-  rating: Number;
-  duration: Number;
-  DiscountPrice: Number;
-  percentageDis: Number;
-  timeDis: Number;
-  NumRating: Number;
-  lectures: Number;
-  articles: Number;
-  exercises: Number;
-  resources: Number;
-  sections: Number;
+  rating: number;
+  duration: number;
+  DiscountPrice: number;
+  percentageDis: number;
+  timeDis: number;
+  NumRating: number;
+  lectures: number;
+  articles: number;
+  exercises: number;
+  resources: number;
+  sections: number;
   // ContentSection?:  Array<Object>,
-  NumStd?: Number;
+  NumStd?: number;
   // learn?:  Array<Object>,
   // requirements?:  Array<Object>,
   // instructorId: { type: mongoose.Schema.ObjectId, ref: "User" },

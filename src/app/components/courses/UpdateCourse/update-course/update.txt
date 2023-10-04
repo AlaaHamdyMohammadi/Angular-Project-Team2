@@ -1,0 +1,342 @@
+
+<div class="container tm-mt-big  tm-mb-big">
+  <div class="row">
+    <div class="col-xl-9 col-lg-10 bg-white    col-md-12 col-sm-12 mx-auto">
+      <div class="  bg-white      tm-block tm-block-h-auto">
+        <div class="row ">
+          <div class="col-12">
+            <h2 class="tm-block-title text-dark d-inline-block" >Updat Course</h2>
+          </div>
+        </div>
+        <div class="row tm-edit-product-row ">
+          <form action="" class=" row text-dark "  (ngSubmit)="updateCourse(formDatae)"  #formDatae="ngForm">
+          <div class="col-xl-6 col-lg-6 col-md-12">
+              <div class="form-group text-dark ">
+                <label class="text-dark fw-bold"
+                  for="name"
+                  >Course Title
+                </label>
+                <input
+                  id="name"
+                  name="title"
+                  type="text"
+                  class="form-control inputEdit border border-2 border-black validate"
+                  [(ngModel)]="Course.title"
+                  required
+                />
+
+                <label
+                class="text-dark fw-bold"
+                  for="name"
+                  >Course SubTitle
+                </label>
+                <input
+                  id="name"
+                  name="subTitle"
+                  type="text"
+                  class="form-control  inputEdit border border-2 border-black validate"
+                  [(ngModel)]="Course.subTitle"
+                  required
+                />
+
+                <label
+                class="text-dark fw-bold"
+                  for="name"
+                  > instructor
+                </label>
+                <input
+                  id="name"
+                  name="instructor"
+                  type="text"
+                  class="form-control  inputEdit border border-2 border-black validate"
+                  [(ngModel)]="Course.instructor"
+                  required
+                />
+
+                <label
+                class="text-dark fw-bold"
+                  for="name"
+                  >BestSeller Course
+                </label>
+                <input
+                  id="name"
+                  name="BestSeller"
+                  type="text"
+                  class="form-control  inputEdit border border-2 border-black validate"
+                  [(ngModel)]="Course.BestSeller"
+                  required
+                />
+
+                <label
+                class="text-dark fw-bold"
+                  for="name"
+                  >Rating
+                </label>
+                <input
+                  id="name"
+                  name="rating"
+                  type="number"
+                  class="form-control  inputEdit border border-2 border-black validate"
+                  [(ngModel)]="Course.rating"
+                  required
+                />
+
+                <label
+                class="text-dark fw-bold"
+                  for="name"
+                  >Number of Rating
+                </label>
+                <input
+                  id="name"
+                  name="NumRating"
+                  type="number"
+                  class="form-control  inputEdit border border-2 border-black validate"
+                  [(ngModel)]="Course.NumRating"
+                  required
+                />
+                <label
+                class="text-dark fw-bold"
+                for="name"
+                > Course duration
+              </label>
+              <input
+                id="name"
+                name="duration"
+                type="number"
+                class="form-control  inputEdit border border-2 border-black validate"
+                [(ngModel)]="Course.duration"
+                required
+              />
+              </div>
+              <div class="form-group mb-3">
+                <label
+                class="text-dark fw-bold"
+                  for="description"
+                  >Description</label
+                >
+                <textarea
+                  class="form-control  inputEdit border border-2 border-black validate"
+                  name="description"
+                  rows="3"
+                  required
+                  [(ngModel)]="Course.description"
+                ></textarea>
+
+                <label
+                class="text-dark fw-bold"
+                  for="description"
+                  >content</label
+                >
+                <textarea
+                  class="form-control  inputEdit border border-2 border-black validate"
+                  rows="3"
+                  name="content"
+                  required
+                  [(ngModel)]="Course.content"
+                ></textarea>
+              </div>
+              <div class="form-group mb-3">
+                <label
+                class="text-dark fw-bold"
+                  for="category"
+                  >Category</label
+                >
+                <select
+                  class="custom-select  inputEdit border border-2 border-black tm-select-accounts"
+                  id="category"
+                >
+                  <option selected>Select category</option>
+                  <option value="1">New Arrival</option>
+                  <option value="2">Most Popular</option>
+                  <option value="3">Trending</option>
+                </select>
+              </div>
+              <div class="form-group mb-3">
+                <label
+                class="text-dark fw-bold"
+                  for="SubCategory"
+                  >SubCategory</label
+                >
+                <select
+                  class="custom-select   inputEdit border border-2 border-black tm-select-accounts"
+                  id="SubCategory"
+                >
+                  <option selected>Select category</option>
+                  <option value="1">New Arrival</option>
+                  <option value="2">Most Popular</option>
+                  <option value="3">Trending</option>
+                </select>
+              </div>
+
+
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+            <div class="tm-product-img-dummy  mx-auto">
+
+              <input type="file" name="image" (change)="selectImage($event)" />
+
+              <!-- <i
+                class="fas fa-cloud-upload-alt tm-upload-icon"
+                onclick="document.getElementById('fileInput').click();"
+              ></i> -->
+            </div>
+            <div class="custom-file mt-3 mb-3">
+              <input id="fileInput" type="file" style="display:none;" />
+              <input
+                type="button"
+                class="  editBtn col-12 text-uppercase mx-auto"
+                value="UPLOAD PRODUCT IMAGE"
+                onclick="document.getElementById('fileInput').click();"
+              />
+            </div>
+
+<div >
+  <label
+  class="text-dark fw-bold"
+  for="name"
+  >priceType
+</label>
+<input
+  id="name"
+  name="priceType"
+  type="text"
+  class="form-control   inputEdit border border-2 border-black validate"
+  [(ngModel)]="Course.priceType"
+  required
+/>
+
+
+  <label
+  class="text-dark fw-bold"
+  for="name"
+  >price
+</label>
+<input
+  id="name"
+  name="price"
+  type="text"
+  class="form-control  inputEdit border border-2 border-black validate"
+  [(ngModel)]="Course.price"
+  required
+/>
+
+
+
+<label
+class="text-dark fw-bold"
+  for="name"
+  >DiscountPrice
+</label>
+<input
+  id="name"
+  name="DiscountPrice"
+  type="number"
+  class="form-control  inputEdit border border-2 border-black validate"
+  [(ngModel)]="Course.DiscountPrice"
+  required
+/>
+
+<label
+class="text-dark fw-bold"
+  for="name"
+  >percentageDis
+</label>
+<input
+  id="name"
+  name="title"
+  type="number"
+  class="form-control  inputEdit border border-2 border-black validate"
+  [(ngModel)]="Course.percentageDis"
+  required
+/>
+
+
+<label
+class="text-dark fw-bold"
+  for="name"
+  >lectures
+</label>
+<input
+  id="name"
+  name="lectures"
+  type="number"
+  class="form-control  inputEdit border border-2 border-black  validate"
+  [(ngModel)]="Course.lectures"
+  required
+/>
+
+
+<label
+class="text-dark fw-bold"
+  for="name"
+  >articles
+</label>
+<input
+  id="name"
+  name="articles"
+  type="number"
+  class="form-control  inputEdit border border-2 border-black validate"
+  [(ngModel)]="Course.articles"
+  required
+/>
+
+
+<label
+class="text-dark fw-bold"
+  for="name"
+  >resources
+</label>
+<input
+  id="name"
+  name="resources"
+  type="number"
+  class="form-control   inputEdit border border-2 border-black validate"
+  [(ngModel)]="Course.resources"
+  required
+/>
+
+
+<label
+class="text-dark fw-bold"
+  for="name"
+  >exercises
+</label>
+<input
+  id="name"
+  name="exercises"
+  type="number"
+  class="form-control  inputEdit border border-2 border-black validate"
+  [(ngModel)]="Course.exercises"
+  required
+/>
+
+
+<label
+class="text-dark fw-bold"
+  for="name"
+  >sections
+</label>
+<input
+  id="name"
+  name="sections"
+  type="number"
+  class="form-control  inputEdit border border-2 border-black validate"
+  [(ngModel)]="Course.sections"
+  required
+/>
+</div>
+
+          </div>
+          <div class="row">
+
+              <button type="submit" class=" editBtn col-12 text-uppercase">Update Now</button>
+
+          </div>
+
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -19,6 +19,8 @@ import { AddCategoryComponent } from './components/categories/add-category/add-c
 import { UpdateCategoryComponent } from './components/categories/update-category/update-category.component';
 import { AddSubCategoryComponent } from './components/sub-categories/add-sub-category/add-sub-category.component';
 import { UpdateSubCategoryComponent } from './components/sub-categories/update-sub-category/update-sub-category.component';
+import { AddCourseComponent } from './components/courses/AddCourse/add-course/add-course.component';
+import { UpdateCourseComponent } from './components/courses/UpdateCourse/update-course/update-course.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,10 @@ import { UpdateSubCategoryComponent } from './components/sub-categories/update-s
     UpdateCategoryComponent,
     AddSubCategoryComponent,
     UpdateSubCategoryComponent,
+    CoursesComponent,
+    AddCourseComponent,
+    UpdateCourseComponent,
+  
   ],
   imports: [
     BrowserModule,

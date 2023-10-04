@@ -8,6 +8,8 @@ import { SubCategoriesComponent } from './components/sub-categories/sub-categori
 import { adminGuard } from './Guards/admin.guard';
 import { AddCategoryComponent } from './components/categories/add-category/add-category.component';
 import { UpdateSubCategoryComponent } from './components/sub-categories/update-sub-category/update-sub-category.component';
+import { AddCourseComponent } from './components/courses/AddCourse/add-course/add-course.component';
+import { UpdateCourseComponent } from './components/courses/UpdateCourse/update-course/update-course.component';
 
 
 const routes: Routes = [
@@ -18,6 +20,16 @@ const routes: Routes = [
     component: CoursesComponent,
     title: 'Courses Page',
     canActivate: [adminGuard],
+  },
+  {
+    path: 'AddCourse',
+    component: AddCourseComponent,
+    title: 'Add Course Form ',
+  },
+  {
+    path: 'UpdateCourse/:courseId',
+    component: UpdateCourseComponent,
+    title: 'Update Course Form ',
   },
   {
     path: 'users',
