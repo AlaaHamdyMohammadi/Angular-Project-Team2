@@ -1,10 +1,10 @@
 .add {
-  background-color: #a435f0;
+  background-color: #eb4d4b;
   color: white;
   padding: 10px;
   border: none;
 }
 
-.add:hover {
-  background-color: #8217ca;
+.editBtn:hover {
+  background-color: #ea6664;
 }

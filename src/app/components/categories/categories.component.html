@@ -1,15 +1,24 @@
 <div class="p-2">
-<button class="add" (click)="addCategoryComp()">Add Category</button>
+<button class="add editBtn" (click)="addCategoryComp()">Add Category</button>
 <div class="row">
   <div class="col-4 mb-2 p-4" *ngFor="let category of categories">
     <div class="card shadow text-center">
       <img [src]="getImage(category.photo)" class="w-100" alt={{category.name}} />
       <h5 class="card-title p-2">{{ category.name }}</h5>
     <p class="card-text">{{ category.title}}</p>
-    <div class="text-center p-2 d-flex justify-content-between">
-      <button class="btn btn-danger" (click)="deleteCategory(category._id)">Delete</button>
-      <button class="btn btn-warning" (click)="updateCategoryComp(category._id)">Update</button>
-    </div>
+    <div class="text-center p-2 mt-3 d-flex">
+          <button
+            class="border-1 mr-1 editBtn bg-gray-200 w-50 border-black hover:text-white p-2 hover:border-none"
+            (click)="deleteCategory(category._id)"
+          >
+            Delete
+          </button>
+          <button
+            class="border-1 ml-1 editBtn bg-gray-200 w-50 border-black hover:text-white p-2 hover:border-none"
+          >
+            Update
+          </button>
+        </div>
   </div>
   </div>
 </div>

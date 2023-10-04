@@ -1,12 +1,12 @@
 .add {
-  background-color: #a435f0;
+  background-color: #eb4d4b;
   color: white;
   padding: 10px;
   border: none;
 }
 
 .add:hover {
-  background-color: #8217ca;
+  background-color: #ea6664;
 }
 
 .editBtn{
@@ -17,8 +17,9 @@
 .editBtn:hover{
   transform: scale(0.95) translateZ(0px);
   transition: 0.1s all;
+   background-color: #ea6664;
 }
 
 .imgHeight{
-  
+
 }
