@@ -12,5 +12,9 @@
 .inputEdit{
   border-radius: 0%;
   border-color: black;
+  
+}
+
+.dropColor{
   color: #ea6664;
 }

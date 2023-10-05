@@ -1,10 +1,10 @@
 <div class="container tm-mt-big tm-mb-big">
   <div class="row">
-    <div class="col-xl-9 col-lg-10  col-md-12 col-sm-12 mx-auto">
+    <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
       <div class="bg-white tm-block tm-block-h-auto">
         <div class="row">
           <div class="col-12">
-            <h2 class="tm-block-title text-dark d-inline-block">Add Course</h2>
+            <h2 class="tm-block-title dropColor d-inline-block">Update Course</h2>
           </div>
         </div>
         <div class="row tm-edit-product-row">
@@ -232,12 +232,29 @@
                     >Please enter Course content
                   </span>
                 </span>
+
+                <label class="text-dark fw-bold" for="name">Level</label>
+                <input
+                  id="name"
+                  name="Level"
+                  type="text"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.Level"
+                  required
+                  #Level="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (Level.touched || Level.dirty) && Level.invalid
+                  }"
+                  placeholder="Level (required)"
+                />
               </div>
+
               <div class="mb-2">
                 <label class="text-dark fw-bold" for="category">Category</label>
                 <select
-                  class="custom-select inputEdit border border-1 border-black tm-select-accounts"
-                 id="category"
+                  class="custom-select inputEdit dropColor border border-1 border-black tm-select-accounts"
+                  id="category"
                   (change)="onOptionChange($event)"
                   [(ngModel)]="Course.categoryId"
                   name="categoryId"
@@ -252,26 +269,26 @@
                 </select>
               </div>
               <div class="mb-2">
-                  <label class="text-dark fw-bold" for="SubCategory"
-                    >SubCategory</label
+                <label class="text-dark fw-bold" for="SubCategory"
+                  >SubCategory</label
+                >
+                <select
+                  class="custom-select inputEdit dropColor border border-1 border-black tm-select-accounts"
+                  id="SubCategory"
+                  (change)="onOptionChangeSUB($event)"
+                  [(ngModel)]="Course.subCategory"
+                  name="subCategory"
+                >
                   >
-                  <select
-                    class="custom-select inputEdit border border-1 border-black tm-select-accounts"
-                    id="SubCategory"
-                    (change)="onOptionChangeSUB($event)"
-                    [(ngModel)]="Course.subCategory"
-                    name="subCategory"
+                  <option selected>Select SubCategory</option>
+                  <option
+                    value="{{ SubCategory._id }}"
+                    *ngFor="let SubCategory of Subcategories"
                   >
-                    >
-                    <option selected>Select SubCategory</option>
-                    <option
-                      value="{{ SubCategory._id }}"
-                      *ngFor="let SubCategory of Subcategories"
-                    >
-                      {{ SubCategory.name }}
-                    </option>
-                  </select>
-                </div>
+                    {{ SubCategory.name }}
+                  </option>
+                </select>
+              </div>
             </div>
 
             <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
@@ -297,20 +314,20 @@
                   (change)="selectImage($event)"
                 /> -->
                 <div class="mx-auto">
-                <img
-                  [src]="getImage(Course.photo)"
-                  class="w-100"
-                  alt="{{ Course.title }}"
-                />
-              </div>
-              <div class="mt-3 mb-3">
-                <input
-                  type="file"
-                  name="image"
-                  class="editBtn col-12 text-uppercase mx-auto"
-                  (change)="selectImage($event)"
-                />
-              </div>
+                  <img
+                    [src]="getImage(Course.photo)"
+                    class="w-100"
+                    alt="{{ Course.title }}"
+                  />
+                </div>
+                <div class="mt-3 mb-3">
+                  <input
+                    type="file"
+                    name="image"
+                    class="editBtn col-12 text-uppercase mx-auto"
+                    (change)="selectImage($event)"
+                  />
+                </div>
               </div>
 
               <div>
@@ -521,28 +538,13 @@
                   </span>
                 </span>
 
-                <label class="text-dark fw-bold" for="name">Level</label>
-                <input
-                  id="name"
-                  name="Level"
-                  type="text"
-                  class="mb-2 form-control inputEdit border border-1 border-black validate"
-                  [(ngModel)]="Course.Level"
-                  required
-                  #Level="ngModel"
-                  [ngClass]="{
-                    'is-invalid':
-                      (Level.touched || Level.dirty) &&
-                      Level.invalid
-                  }"
-                  placeholder="Level (required)"
-                />
+
               </div>
             </div>
             <div class="row">
               <!-- <button type="submit" class=" editBtn col-12 text-uppercase" [hidden]="Courseform.invalid">Add Course Now</button> -->
               <button type="submit" class="editBtn col-12 text-uppercase">
-               Update Course Now
+                Update Course Now
               </button>
             </div>
           </form>

@@ -100,7 +100,7 @@ export class UpdateCourseComponent {
       .subscribe((data: any) => {
         this.Course = data.data.course;
         console.log(this.Course.photo)
-
+        console.log(data.data.course);
       });
 
   }

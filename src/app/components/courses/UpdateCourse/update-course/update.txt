@@ -598,3 +598,561 @@ placeholder="price (required)"
     </div>
   </div>
 </div>
+
+
+////////////////////////////////////////
+
+<div class="container tm-mt-big tm-mb-big">
+  <div class="row">
+    <div class="col-xl-9 col-lg-10  col-md-12 col-sm-12 mx-auto">
+      <div class="bg-white tm-block tm-block-h-auto">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="tm-block-title text-dark d-inline-block">Add Course</h2>
+          </div>
+        </div>
+        <div class="row tm-edit-product-row">
+          <form
+            action=""
+            class="row text-dark"
+            (ngSubmit)="updateCourse(formDatae)"
+            #formDatae="ngForm"
+          >
+            <div class="col-xl-6 col-lg-6 col-md-12">
+              <div class="text-dark">
+                <label class="text-dark fw-bold" for="title"
+                  >Course Title
+                </label>
+                <input
+                  id="title"
+                  name="title"
+                  type="text"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.title"
+                  #title="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (title.touched || title.dirty) && title.invalid
+                  }"
+                  placeholder="Course Title (required)"
+                  minlength="4"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="title.errors?.['required']"
+                    >Please enter Title
+                  </span>
+                  <span *ngIf="title.errors?.['minlength']">
+                    name must be at least 4 characters</span
+                  >
+                </span>
+
+                <label class="text-dark fw-bold" for="name"
+                  >Course SubTitle
+                </label>
+                <input
+                  id="name"
+                  name="subTitle"
+                  type="text"
+                  class="form-control mb-2 inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.subTitle"
+                  required
+                  #SubTitle="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (SubTitle.touched || SubTitle.dirty) && SubTitle.invalid
+                  }"
+                  placeholder="Course SubTitle (required)"
+                  minlength="50"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="SubTitle.errors?.['required']"
+                    >Please enter SubTitle
+                  </span>
+                  <span *ngIf="SubTitle.errors?.['minlength']">
+                    SubTitle must be at least 50 characters</span
+                  >
+                </span>
+
+                <label class="text-dark fw-bold" for="name"> instructor </label>
+                <input
+                  id="name"
+                  name="instructor"
+                  type="text"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.instructor"
+                  required
+                  #instructor="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (instructor.touched || instructor.dirty) &&
+                      instructor.invalid
+                  }"
+                  placeholder="Course instructor (required)"
+                  maxlength="40"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="instructor.errors?.['required']"
+                    >Please enter SubTitle
+                  </span>
+                  <span *ngIf="instructor.errors?.['maxlength']">
+                    instructor Name must be less than 40 characters</span
+                  >
+                </span>
+
+                <label class="text-dark fw-bold" for="name"
+                  >BestSeller Course
+                </label>
+                <input
+                  id="name"
+                  name="BestSeller"
+                  type="text"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.BestSeller"
+                />
+
+                <label class="text-dark fw-bold" for="name">Rating </label>
+                <input
+                  id="name"
+                  name="rating"
+                  type="number"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.rating"
+                  required
+                  #rating="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (rating.touched || rating.dirty) && rating.invalid
+                  }"
+                  placeholder="Course instructor (required)"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="instructor.errors?.['required']"
+                    >Please enter SubTitle
+                  </span>
+                </span>
+
+                <label class="text-dark fw-bold" for="name"
+                  >Number of Rating
+                </label>
+                <input
+                  id="name"
+                  name="NumRating"
+                  type="number"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.NumRating"
+                  required
+                  #NumRating="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (NumRating.touched || NumRating.dirty) &&
+                      NumRating.invalid
+                  }"
+                  placeholder="Course instructor (required)"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="NumRating.errors?.['required']"
+                    >Please enter Number of Rating
+                  </span>
+                </span>
+                <label class="text-dark fw-bold" for="name">
+                  Course duration
+                </label>
+                <input
+                  id="name"
+                  name="duration"
+                  type="number"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.duration"
+                  required
+                  #duration="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (duration.touched || duration.dirty) && duration.invalid
+                  }"
+                  placeholder="Course duration (required)"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="duration.errors?.['required']"
+                    >Please enter Course Duration in hours
+                  </span>
+                </span>
+              </div>
+              <div class="">
+                <label class="text-dark fw-bold" for="description"
+                  >Description</label
+                >
+                <textarea
+                  class="form-control mb-2 inputEdit border border-1 border-black validate"
+                  name="description"
+                  rows="3"
+                  required
+                  [(ngModel)]="Course.description"
+                  minlength="5"
+                  #description="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (description.touched || description.dirty) &&
+                      description.invalid
+                  }"
+                  placeholder="Course Description (required)"
+                ></textarea>
+
+                <span class="invalid-feedback">
+                  <span *ngIf="description.errors?.['maxlength']">
+                    Course Description must be at least 500 characters</span
+                  >
+
+                  <span *ngIf="description.errors?.['required']"
+                    >Please enter Course Description
+                  </span>
+                </span>
+
+                <label class="text-dark fw-bold" for="description"
+                  >content</label
+                >
+                <textarea
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  rows="3"
+                  name="content"
+                  required
+                  [(ngModel)]="Course.content"
+                  minlength="5"
+                  #content="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (content.touched || content.dirty) && content.invalid
+                  }"
+                  placeholder="Course content (required)"
+                ></textarea>
+
+                <span class="invalid-feedback">
+                  <span *ngIf="content.errors?.['required']"
+                    >Please enter Course content
+                  </span>
+                </span>
+              </div>
+              <div class="mb-2">
+                <label class="text-dark fw-bold" for="category">Category</label>
+                <select
+                  class="custom-select inputEdit border border-1 border-black tm-select-accounts"
+                 id="category"
+                  (change)="onOptionChange($event)"
+                  [(ngModel)]="Course.categoryId"
+                  name="categoryId"
+                >
+                  <option selected>Select category</option>
+                  <option
+                    value="{{ category._id }}"
+                    *ngFor="let category of categories"
+                  >
+                    {{ category.name }}
+                  </option>
+                </select>
+              </div>
+              <div class="mb-2">
+                  <label class="text-dark fw-bold" for="SubCategory"
+                    >SubCategory</label
+                  >
+                  <select
+                    class="custom-select inputEdit border border-1 border-black tm-select-accounts"
+                    id="SubCategory"
+                    (change)="onOptionChangeSUB($event)"
+                    [(ngModel)]="Course.subCategory"
+                    name="subCategory"
+                  >
+                    >
+                    <option selected>Select SubCategory</option>
+                    <option
+                      value="{{ SubCategory._id }}"
+                      *ngFor="let SubCategory of Subcategories"
+                    >
+                      {{ SubCategory.name }}
+                    </option>
+                  </select>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+              <div class="mx-auto">
+                <!-- <img
+                  [src]="getImage()"
+                  class="w-100 h-50"
+                  alt="{{ Course.title }}"
+                /> -->
+
+                <!-- <input
+                  type="file"
+                  name="image"
+                  (change)="selectImage($event)"
+                /> -->
+              </div>
+              <div class="mt-4 mb-2">
+                <!-- <input id="fileInput" type="file" style="display:none;" /> -->
+                <!-- <input
+                  type="file"
+                  class="editBtn col-12 text-uppercase mx-auto"
+                  value="UPLOAD PRODUCT IMAGE"
+                  (change)="selectImage($event)"
+                /> -->
+                <div class="mx-auto">
+                <img
+                  [src]="getImage(Course.photo)"
+                  class="w-100"
+                  alt="{{ Course.title }}"
+                />
+              </div>
+              <div class="mt-3 mb-3">
+                <input
+                  type="file"
+                  name="image"
+                  class="editBtn col-12 text-uppercase mx-auto"
+                  (change)="selectImage($event)"
+                />
+              </div>
+              </div>
+
+              <div>
+                <label class="text-dark fw-bold" for="name">priceType </label>
+                <input
+                  id="name"
+                  name="priceType"
+                  type="text"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.priceType"
+                  required
+                  #priceType="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (priceType.touched || priceType.dirty) &&
+                      priceType.invalid
+                  }"
+                  placeholder="priceType (required)"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="priceType.errors?.['required']"
+                    >Please enter Free or Paid
+                  </span>
+                </span>
+
+                <label class="text-dark fw-bold" for="name">price </label>
+                <input
+                  id="name"
+                  name="price"
+                  type="number"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.price"
+                  required
+                  #price="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (price.touched || price.dirty) && price.invalid
+                  }"
+                  placeholder="price (required)"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="price.errors?.['required']"
+                    >Please enter Course Price
+                  </span>
+                </span>
+
+                <label class="text-dark fw-bold" for="name"
+                  >DiscountPrice
+                </label>
+                <input
+                  id="name"
+                  name="DiscountPrice"
+                  type="number"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.DiscountPrice"
+                  required
+                  #DiscountPrice="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (DiscountPrice.touched || DiscountPrice.dirty) &&
+                      DiscountPrice.invalid
+                  }"
+                  placeholder="price after Discount (required)"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="DiscountPrice.errors?.['required']"
+                    >Please enter price after Discount
+                  </span>
+                </span>
+
+                <label class="text-dark fw-bold" for="name"
+                  >percentageDis
+                </label>
+                <input
+                  id="name"
+                  name="percentageDis"
+                  type="number"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.percentageDis"
+                  required
+                  #percentageDis="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (percentageDis.touched || percentageDis.dirty) &&
+                      percentageDis.invalid
+                  }"
+                  placeholder="percentage Discount of price (required)"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="percentageDis.errors?.['required']">
+                    enter percentage Discount of price
+                  </span>
+                </span>
+
+                <label class="text-dark fw-bold" for="name">lectures </label>
+                <input
+                  id="name"
+                  name="lectures"
+                  type="number"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.lectures"
+                  required
+                  #lectures="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (lectures.touched || lectures.dirty) && lectures.invalid
+                  }"
+                  placeholder="Number of lectures (required)"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="lectures.errors?.['required']"
+                    >Please enter number of lectures
+                  </span>
+                </span>
+
+                <label class="text-dark fw-bold" for="name">articles </label>
+                <input
+                  id="name"
+                  name="articles"
+                  type="number"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.articles"
+                  required
+                  #articles="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (articles.touched || articles.dirty) && articles.invalid
+                  }"
+                  placeholder="Number of articles(required)"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="articles.errors?.['required']"
+                    >Please enter number of articles
+                  </span>
+                </span>
+
+                <label class="text-dark fw-bold" for="name">resources </label>
+                <input
+                  id="name"
+                  name="resources"
+                  type="number"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.resources"
+                  required
+                  #resources="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (resources.touched || resources.dirty) &&
+                      resources.invalid
+                  }"
+                  placeholder=" numbeer of resources (required)"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="resources.errors?.['required']"
+                    >Please enter numbeer of resources
+                  </span>
+                </span>
+
+                <label class="text-dark fw-bold" for="name">exersices </label>
+                <input
+                  id="name"
+                  name="exercises"
+                  type="number"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.exercises"
+                  required
+                  #exercises="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (exercises.touched || exercises.dirty) &&
+                      exercises.invalid
+                  }"
+                  placeholder=" numbeer of resources (required)"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="exercises.errors?.['required']"
+                    >Please enter numbeer of resources
+                  </span>
+                </span>
+
+                <label class="text-dark fw-bold" for="name">sections </label>
+                <input
+                  id="name"
+                  name="sections"
+                  type="number"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.sections"
+                  required
+                  #sections="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (sections.touched || sections.dirty) && sections.invalid
+                  }"
+                  placeholder="Number of sections (required)"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="sections.errors?.['required']"
+                    >Please enter numbrer of sections
+                  </span>
+                </span>
+
+                <label class="text-dark fw-bold" for="name">Level</label>
+                <input
+                  id="name"
+                  name="Level"
+                  type="text"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Course.Level"
+                  required
+                  #Level="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (Level.touched || Level.dirty) &&
+                      Level.invalid
+                  }"
+                  placeholder="Level (required)"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <!-- <button type="submit" class=" editBtn col-12 text-uppercase" [hidden]="Courseform.invalid">Add Course Now</button> -->
+              <button type="submit" class="editBtn col-12 text-uppercase">
+               Update Course Now
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
