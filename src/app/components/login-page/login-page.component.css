@@ -94,7 +94,7 @@ img{
    color: #5d5076;
  }
  .input-field .input:focus, .input-field .input:valid{
-    border-bottom: 1px solid #743ae1;
+    border-bottom: 1px solid #ea6664;
  }
  .submit{
     border: none;
