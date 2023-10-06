@@ -22,6 +22,7 @@ import { UpdateSubCategoryComponent } from './components/sub-categories/update-s
 import { AddCourseComponent } from './components/courses/AddCourse/add-course/add-course.component';
 import { UpdateCourseComponent } from './components/courses/UpdateCourse/update-course/update-course.component';
 import { InstructorsComponent } from './components/instructors/instructors.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { InstructorsComponent } from './components/instructors/instructors.compo
     AddCourseComponent,
     UpdateCourseComponent,
     InstructorsComponent,
+    SearchComponent,
   
   ],
   imports: [

@@ -12,7 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CoursesComponent implements OnInit {
   courses: ICourse[] = [];
-  searchTerm = '';
+  // searchTerm = '';
   page: number = 1;
   constructor(
     private coursesServ: CoursesService,
@@ -34,11 +34,7 @@ export class CoursesComponent implements OnInit {
         });
       }
     });
-    activatedRoute.params.subscribe((params) => {
-      if (params.searchTerm) {
-        this.searchTerm = params.searchTerm;
-      }
-    })
+    
   }
   ngOnInit(): void {
     this.spinner.show();

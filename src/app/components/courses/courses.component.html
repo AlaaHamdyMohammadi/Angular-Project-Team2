@@ -1,7 +1,4 @@
-<div class="divSearch">
-  <input #s type="text" placeholder="Search about course..." [value]="searchTerm" (keyup.enter)="searchResult(s.value)">
-  <button (click)="searchResult(s.value)">Search</button>
-</div>
+<app-search></app-search>
 
 <div class="p-2">
   <button class="add editBtn" (click)="AddCourseCOMP()">Add Course</button>
