@@ -1,72 +1,86 @@
 <!-- Default Nav -->
 <!-- bg-gray-200 hover:border-none border-1 border-dark border -->
-  <nav class="bg-black">
-    <div class="container-fluid border-bottom shadow-sm p-2 text-sm">
-      <div class="navbar-brand d-flex justify-content-between">
-        <img class="text-center" routerLink="/login" src="./assets/Udemy-Logo-2017-2021.png" alt="" width="110" height="50">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row">
-          <li class="nav-item ">
-            <a class="nav-link text-white font-bold  m-2 p-2" href="#" routerLink="/courses" routerLinkActive="activeLink">Courses</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link text-white font-bold m-2 p-2" href="#" routerLink="/instructors" routerLinkActive="activeLink">Instructors</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link text-white font-bold m-2 p-2" href="#" routerLink="/users" routerLinkActive="activeLink">Users</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link text-white font-bold m-2 p-2" href="#" routerLink="/categories" routerLinkActive="activeLink">Categories</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link text-white font-bold m-2 p-2" href="#" routerLink="/subCategories" routerLinkActive="activeLink">SubCategories</a>
-          </li>
-
-        </ul>
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item ">
-            <a class="nav-link editBtn bg-gray-200 border-1 border-dark border m-2 p-2" href="#" [hidden]="isLoggedIn" routerLink="/login" routerLinkActive="activeLink">Login</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link editBtn border-1 border-dark border m-2 p-2" style="background-color: #ea6664; color: white; border: none;" href="#" [hidden]="!isLoggedIn"  (click)="logout()" routerLinkActive="activeLink">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<nav class="bg-black">
+  <div class="container-fluid border-bottom shadow-sm p-2 text-sm">
+    <div class="navbar-brand d-flex justify-content-between">
+      <img
+        class="text-center"
+        routerLink="/login"
+        src="./assets/Udemy-Logo-2017-2021.png"
+        alt=""
+        width="110"
+        height="50"
+      />
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row">
         <li class="nav-item">
-          <a class="nav-link active test" aria-current="page" href="#">Home</a>
+          <a
+            class="nav-link text-white font-bold m-2 p-2"
+            href="#"
+            routerLink="/courses"
+            routerLinkActive="activeLink"
+            >Courses</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <a
+            class="nav-link text-white font-bold m-2 p-2"
+            href="#"
+            routerLink="/instructors"
+            routerLinkActive="activeLink"
+            >Instructors</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <a
+            class="nav-link text-white font-bold m-2 p-2"
+            href="#"
+            routerLink="/users"
+            routerLinkActive="activeLink"
+            >Users</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-white font-bold m-2 p-2"
+            href="#"
+            routerLink="/categories"
+            routerLinkActive="activeLink"
+            >Categories</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-white font-bold m-2 p-2"
+            href="#"
+            routerLink="/subCategories"
+            routerLinkActive="activeLink"
+            >SubCategories</a
+          >
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link editBtn bg-gray-200 border-1 border-dark border m-2 p-2"
+            href="#"
+            [hidden]="isLoggedIn"
+            routerLink="/login"
+            routerLinkActive="activeLink"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link editBtn border-1 border-dark border m-2 p-2"
+            style="background-color: #ea6664; color: white; border: none"
+            href="#"
+            [hidden]="!isLoggedIn"
+            (click)="logout()"
+            routerLinkActive="activeLink"
+            >Logout</a
+          >
+        </li>
+      </ul>
     </div>
   </div>
-</nav> -->
+</nav>
