@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { iInstructor } from 'src/app/Models/iInstructor';
@@ -19,8 +19,23 @@ export class InstructorsComponent implements OnInit {
     private instructorServ: InstructorsService,
     private spinner: NgxSpinnerService,
     private toaster: ToastrService,
+    activatedRoute: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+    activatedRoute.params.subscribe((params) => {
+      if (params.searchInstructor) {
+        this.instructorServ
+          .getAllInstructorsBySearch(params.searchInstructor)
+          .subscribe((instructors) => {
+            this.instructors = instructors;
+          });
+      } else {
+        this.instructorServ.getAllInstructors().subscribe((instructors) => {
+          this.instructors = instructors;
+        });
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.spinner.show();
@@ -48,6 +63,12 @@ export class InstructorsComponent implements OnInit {
 
   getImage(photo: string): string {
     return `http://127.0.0.1:4000/img/users/${photo}`;
+  }
+
+  searchResult(instructor: string): void {
+    if (this.instructor) {
+      this.router.navigateByUrl(`/search/${instructor}`);
+    }
   }
 
   deleteInstructors(id: number) {

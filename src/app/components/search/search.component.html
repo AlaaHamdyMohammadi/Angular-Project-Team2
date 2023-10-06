@@ -1,4 +1,4 @@
 <div class="divSearch">
-  <input #s type="text" placeholder="Search about course..." [value]="searchTerm" (keyup.enter)="searchResult(s.value)">
+  <input #s type="text" placeholder="Search..." [value]="searchTerm" (keyup.enter)="searchResult(s.value)">
   <button (click)="searchResult(s.value)">Search</button>
 </div>

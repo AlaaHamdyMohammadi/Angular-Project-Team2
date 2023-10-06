@@ -19,10 +19,10 @@ export class SearchComponent {
       }
     });
   }
-  
-  searchResult(course: string): void {
-    if (course) {
-      this.router.navigateByUrl(`/search/${course}`);
+
+  searchResult(item: string): void {
+    if (item) {
+      this.router.navigateByUrl(`/search/${item}`);
     }
   }
 }

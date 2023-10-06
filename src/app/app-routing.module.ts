@@ -57,7 +57,7 @@ const routes: Routes = [
     canActivate: [adminGuard],
   },
   {
-    path: 'search/:searchTerm',
+    path: 'search/:searchInstructor',
     component: InstructorsComponent,
     title: 'Instructors Page',
     canActivate: [adminGuard],
