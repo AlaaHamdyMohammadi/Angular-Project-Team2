@@ -1,1 +1,33 @@
-<p>instructors works!</p>
+<div class="p-2">
+  <div class="row container">
+    <div class="col-4 mb-2 p-5" *ngFor="let instructor of instructors">
+      <div class="card shadow"  style="width: 18rem">
+        <img
+          [src]="getImage(instructor.photo)"
+          class="rounded-full w-50 ml-20 mt-2"
+          alt="{{ instructor.username }}"
+        />
+        <div class="border-t-2 m-2">
+
+          <h5 class="card-title mt-4 mb-4"><strong>Name:</strong>  {{ instructor.username }}</h5>
+          <p class="card-text"><strong>Email:</strong> {{ instructor.email }}</p>
+        </div>
+        <div class="text-center d-flex justify-content-between">
+          <button class="border-1 editBtn bg-gray-200 w-100 border-gray font-bold mt-2 hover:text-white p-2 hover:border-none" (click)="deleteInstructors(instructor._id)">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <i
+      (click)="prevPage()"
+      class="add fa fa-chevron-left p-3 rounded-full hover:text-white"
+    ></i>
+    <i
+      (click)="nextPage()"
+      class="add fa fa-chevron-right p-3 ml-2 rounded-full hover:text-white"
+    ></i>
+  </div>
+</div>
