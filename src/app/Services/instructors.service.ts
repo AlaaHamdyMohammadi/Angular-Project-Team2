@@ -32,6 +32,16 @@ export class InstructorsService {
       );
   }
 
+  getAllInstructorsBySearch(searchTerm: string): Observable<iInstructor[]> {
+    return this.getAllInstructors().pipe(
+      map((instructors) =>
+        instructors.filter((instructor) =>
+          instructor.username.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      )
+    );
+  }
+
   deleteInstructors(instructorId: number): Observable<void> {
     console.log('service', instructorId);
     return this.httpClient.delete<void>(

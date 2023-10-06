@@ -24,21 +24,6 @@ export class CoursesService {
       .pipe(map((res: any) => res.data.courses));
   }
 
-  // searchCourses(
-  //   searchTerm: string,
-  //   page: number = 1,
-  //   limit: number = 15
-  // ): Observable<ICourse[]> {
-  //   const params = new HttpParams()
-  //     .set('page', page.toString())
-  //     .set('limit', limit.toString())
-  //     .set('search', searchTerm); // Add a 'search' query parameter for the search term
-
-  //   return this.httpClient
-  //     .get<ICourse[]>(`${environment.BaseApiURL}/courses`, { params })
-  //     .pipe(map((res: any) => res.data.courses));
-  // }
-
   getAllCoursesBySearch(searchTerm: string): Observable<ICourse[]> {
     return this.getAllCourses().pipe(
       map((courses) =>
