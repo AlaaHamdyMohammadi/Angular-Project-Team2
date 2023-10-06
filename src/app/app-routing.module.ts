@@ -45,13 +45,31 @@ const routes: Routes = [
     canActivate: [adminGuard],
   },
   {
+    path: 'search/:searchTerm',
+    component: UsersComponent,
+    title: 'Users Page',
+    canActivate: [adminGuard],
+  },
+  {
     path: 'instructors',
     component: InstructorsComponent,
     title: 'Instructors Page',
     canActivate: [adminGuard],
   },
   {
+    path: 'search/:searchTerm',
+    component: InstructorsComponent,
+    title: 'Instructors Page',
+    canActivate: [adminGuard],
+  },
+  {
     path: 'categories',
+    component: CategoriesComponent,
+    title: 'Categories Page',
+    canActivate: [adminGuard],
+  },
+  {
+    path: 'search/:searchTerm',
     component: CategoriesComponent,
     title: 'Categories Page',
     canActivate: [adminGuard],
