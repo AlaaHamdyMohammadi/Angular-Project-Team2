@@ -17,9 +17,6 @@
 .editBtn:hover{
   transform: scale(0.95) translateZ(0px);
   transition: 0.1s all;
-   background-color: #ea6664;
+  background-color: #ea6664;
 }
 
-.imgHeight{
-
-}
