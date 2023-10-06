@@ -21,6 +21,7 @@ import { AddSubCategoryComponent } from './components/sub-categories/add-sub-cat
 import { UpdateSubCategoryComponent } from './components/sub-categories/update-sub-category/update-sub-category.component';
 import { AddCourseComponent } from './components/courses/AddCourse/add-course/add-course.component';
 import { UpdateCourseComponent } from './components/courses/UpdateCourse/update-course/update-course.component';
+import { InstructorsComponent } from './components/instructors/instructors.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { UpdateCourseComponent } from './components/courses/UpdateCourse/update-
     CoursesComponent,
     AddCourseComponent,
     UpdateCourseComponent,
+    InstructorsComponent,
   
   ],
   imports: [
