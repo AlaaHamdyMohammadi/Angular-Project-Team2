@@ -1,6 +1,6 @@
 <div class="container tm-mt-big tm-mb-big">
   <div class="row">
-    <div class="col-xl-9 col-lg-10  col-md-12 col-sm-12 mx-auto">
+    <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
       <div class="bg-white tm-block tm-block-h-auto">
         <div class="row">
           <div class="col-12">
@@ -237,7 +237,7 @@
                 <label class="text-dark fw-bold" for="category">Category</label>
                 <select
                   class="custom-select inputEdit border border-1 border-black tm-select-accounts"
-                 id="category"
+                  id="category"
                   (change)="onOptionChange($event)"
                   [(ngModel)]="Course.categoryId"
                   name="categoryId"
@@ -252,26 +252,26 @@
                 </select>
               </div>
               <div class="mb-2">
-                  <label class="text-dark fw-bold" for="SubCategory"
-                    >SubCategory</label
+                <label class="text-dark fw-bold" for="SubCategory"
+                  >SubCategory</label
+                >
+                <select
+                  class="custom-select inputEdit border border-1 border-black tm-select-accounts"
+                  id="SubCategory"
+                  (change)="onOptionChangeSUB($event)"
+                  [(ngModel)]="Course.subCategory"
+                  name="subCategory"
+                >
                   >
-                  <select
-                    class="custom-select inputEdit border border-1 border-black tm-select-accounts"
-                    id="SubCategory"
-                    (change)="onOptionChangeSUB($event)"
-                    [(ngModel)]="Course.subCategory"
-                    name="subCategory"
+                  <option selected>Select SubCategory</option>
+                  <option
+                    value="{{ SubCategory._id }}"
+                    *ngFor="let SubCategory of Subcategories"
                   >
-                    >
-                    <option selected>Select SubCategory</option>
-                    <option
-                      value="{{ SubCategory._id }}"
-                      *ngFor="let SubCategory of Subcategories"
-                    >
-                      {{ SubCategory.name }}
-                    </option>
-                  </select>
-                </div>
+                    {{ SubCategory.name }}
+                  </option>
+                </select>
+              </div>
             </div>
 
             <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
@@ -517,8 +517,7 @@
                   #Level="ngModel"
                   [ngClass]="{
                     'is-invalid':
-                      (Level.touched || Level.dirty) &&
-                      Level.invalid
+                      (Level.touched || Level.dirty) && Level.invalid
                   }"
                   placeholder="Level (required)"
                 />
