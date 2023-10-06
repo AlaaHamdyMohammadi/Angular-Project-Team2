@@ -1,5 +1,5 @@
 import { environment } from 'src/environments/environment.development';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { iCategory } from '../Models/iCategory';
@@ -16,9 +16,12 @@ export class CategoriesService {
     };
   }
 
-  getAllCategories(): Observable<iCategory[]> {
+  getAllCategories(page: number = 1, limit: number = 15): Observable<iCategory[]> {
+    const params = new HttpParams()
+      .set('page', page.toString())
+      .set('limit', limit.toString());
     return this.httpClient
-      .get<iCategory>(`${environment.BaseApiURL}/categories`)
+      .get<iCategory>(`${environment.BaseApiURL}/categories`, { params })
       .pipe(map((res: any) => res.data.documents));
   }
 
