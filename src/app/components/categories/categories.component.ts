@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 })
 export class CategoriesComponent implements OnInit {
   categories: iCategory[] = [];
+  page: number = 1;
+
   constructor(
     private categoriesServ: CategoriesService,
     private spinner: NgxSpinnerService,
@@ -21,11 +23,27 @@ export class CategoriesComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.spinner.show();
-    this.categoriesServ.getAllCategories().subscribe((data) => {
+    this.categoriesPage();
+  }
+
+  categoriesPage() {
+    this.categoriesServ.getAllCategories(this.page).subscribe((data) => {
       //console.log(data);
       this.categories = data;
       this.spinner.hide();
     });
+  }
+
+  nextPage() {
+    this.spinner.show();
+    this.page++;
+    this.categoriesPage();
+  }
+
+  prevPage() {
+    this.spinner.show();
+    this.page--;
+    this.categoriesPage();
   }
 
   getImage(photo: string): string {
@@ -50,8 +68,6 @@ export class CategoriesComponent implements OnInit {
       this.router.navigate(['/categories']);
     }
   }
-
-
 
   addCategoryComp() {
     this.router.navigate(['AddCategory/']);
