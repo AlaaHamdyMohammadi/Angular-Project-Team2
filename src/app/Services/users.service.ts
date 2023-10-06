@@ -16,8 +16,10 @@ export class UsersService {
     };
   }
 
-  getAllUsers(page: number=1, limit=15): Observable<iUser[]> {
-    const params = new HttpParams().set('page', page.toString()).set('limit', limit.toString());
+  getAllUsers(page: number = 1, limit = 15): Observable<iUser[]> {
+    const params = new HttpParams()
+      .set('page', page.toString())
+      .set('limit', limit.toString());
     return this.httpClient
       .get<iUser[]>(`${environment.BaseApiURL}/users`, { params })
       .pipe(
@@ -26,6 +28,16 @@ export class UsersService {
           users.filter((user) => user.role === UserRole.User)
         )
       );
+  }
+
+  getAllUsersBySearch(searchTerm: string): Observable<iUser[]> {
+    return this.getAllUsers().pipe(
+      map((users) =>
+        users.filter((user) =>
+          user.username.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      )
+    );
   }
 
   deleteUser(userId: number): Observable<void> {
