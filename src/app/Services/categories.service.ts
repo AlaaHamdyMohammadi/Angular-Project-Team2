@@ -22,6 +22,16 @@ export class CategoriesService {
       .pipe(map((res: any) => res.data.documents));
   }
 
+  getAllCategoriesBySearch(searchTerm: string): Observable<iCategory[]> {
+    return this.getAllCategories().pipe(
+      map((categories) =>
+        categories.filter((category) =>
+          category.name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      )
+    );
+  }
+
   deleteCategory(categoryId: number): Observable<void> {
     console.log('service', categoryId);
     return this.httpClient.delete<void>(
