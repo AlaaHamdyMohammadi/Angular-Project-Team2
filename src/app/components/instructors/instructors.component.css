@@ -1,0 +1,10 @@
+.add {
+  background-color: #eb4d4b;
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+.editBtn:hover {
+  background-color: #ea6664;
+}
