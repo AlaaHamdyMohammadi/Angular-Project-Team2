@@ -5,10 +5,10 @@ export interface iInstructor {
   photo: string;
   password: string;
   passwordConfirm: string;
-  role: UserRole;
+  role: InstructorRole;
 }
 
-export enum UserRole {
+export enum InstructorRole {
   User = 'user',
   Instructor = 'instructor',
   Admin = 'admin',
