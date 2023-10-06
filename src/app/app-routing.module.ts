@@ -23,6 +23,12 @@ const routes: Routes = [
     canActivate: [adminGuard],
   },
   {
+    path: 'search/:searchTerm',
+    component: CoursesComponent,
+    title: 'Courses Page',
+    canActivate: [adminGuard],
+  },
+  {
     path: 'AddCourse',
     component: AddCourseComponent,
     title: 'Add Course Form ',

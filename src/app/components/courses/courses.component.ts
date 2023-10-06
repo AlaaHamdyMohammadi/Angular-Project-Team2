@@ -3,7 +3,7 @@ import { ICourse } from 'src/app/Models/iCourse';
 import { CoursesService } from 'src/app/Services/courses.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-courses',
@@ -12,13 +12,34 @@ import { Router } from '@angular/router';
 })
 export class CoursesComponent implements OnInit {
   courses: ICourse[] = [];
+  searchTerm = '';
   page: number = 1;
   constructor(
     private coursesServ: CoursesService,
     private spinner: NgxSpinnerService,
     private toaster: ToastrService,
-    private router: Router
-  ) {}
+    activatedRoute: ActivatedRoute,
+    private router: Router,
+  ) {
+    activatedRoute.params.subscribe((params) => {
+      if (params.searchTerm) {
+        this.coursesServ
+          .getAllCoursesBySearch(params.searchTerm)
+          .subscribe((courses) => {
+            this.courses = courses;
+          });
+      } else {
+        this.coursesServ.getAllCourses().subscribe((courses) => {
+          this.courses = courses;
+        });
+      }
+    });
+    activatedRoute.params.subscribe((params) => {
+      if (params.searchTerm) {
+        this.searchTerm = params.searchTerm;
+      }
+    })
+  }
   ngOnInit(): void {
     this.spinner.show();
     this.coursesPage();
@@ -46,6 +67,12 @@ export class CoursesComponent implements OnInit {
 
   getImage(photo: string): string {
     return `http://127.0.0.1:4000/img/courses/${photo}`;
+  }
+
+  searchResult(course: string):void{
+    if(course){
+      this.router.navigateByUrl(`/search/${course}`)
+    }
   }
 
   AddCourseCOMP() {
