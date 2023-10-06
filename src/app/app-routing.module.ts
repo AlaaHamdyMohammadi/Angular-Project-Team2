@@ -10,6 +10,7 @@ import { AddCategoryComponent } from './components/categories/add-category/add-c
 import { UpdateSubCategoryComponent } from './components/sub-categories/update-sub-category/update-sub-category.component';
 import { AddCourseComponent } from './components/courses/AddCourse/add-course/add-course.component';
 import { UpdateCourseComponent } from './components/courses/UpdateCourse/update-course/update-course.component';
+import { InstructorsComponent } from './components/instructors/instructors.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,12 @@ const routes: Routes = [
     path: 'users',
     component: UsersComponent,
     title: 'Users Page',
+    canActivate: [adminGuard],
+  },
+  {
+    path: 'instructors',
+    component: InstructorsComponent,
+    title: 'Instructors Page',
     canActivate: [adminGuard],
   },
   {
