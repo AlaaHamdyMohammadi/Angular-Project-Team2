@@ -67,7 +67,7 @@ export class LoginPageComponent implements OnInit {
       (data: any) => {
         localStorage.setItem('token', data.token);
         this.toaster.success('Successfully logged in');
-        this.router.navigate(['/courses']);
+        this.router.navigate(['/home']);
         this.spinner.hide();
       }, 
       (error) => {

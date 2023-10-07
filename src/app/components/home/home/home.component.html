@@ -1,0 +1,121 @@
+<body>
+  <div class="" id="home">
+    <div class="container">
+      <div class="row mb-5">
+        <app-abovr-charts></app-abovr-charts>
+        <!-- <app-bar2-charts></app-bar2-charts> -->
+
+        <!-- app-abovr-charts -->
+        
+        <!-- app-abovr-charts -->
+      </div>
+      <!-- row -->
+      <div class="row tm-content-row">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+          <div class="tm-block">
+            <h2 class="tm-block-title text-black">Latest Hits</h2>
+            <!-- <app-line-chart></app-line-chart> -->
+            <app-line-chart></app-line-chart>
+
+            <!-- <canvas id="lineChart"></canvas> -->
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+          <div class="tm-block">
+            <h2 class="tm-block-title text-black">Performance</h2>
+            <!-- <canvas id="barChart"></canvas> -->
+            <app-pie-chart></app-pie-chart>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+          <div class="tm-block tm-block-taller">
+            <h2 class="tm-block-title text-black">Storage Information</h2>
+            <app-bar-chart></app-bar-chart>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+          <div class="tm-block tm-block-taller tm-block-scroll">
+            <h2 class="tm-block-title text-black">CATEGORY LIST</h2>
+            <table class="table">
+              <!-- <thead>
+                              <tr>
+                                <th scope="col"><b>USER PHOTO</b></th>
+
+
+                                  <th scope="col"><b>USER NAM</b>E</th>
+
+                              </tr>
+                          </thead> -->
+              <tbody *ngFor="let category of categories">
+                <tr>
+                  <td>
+                    <img
+                      [src]="getImageCAT(category.photo)"
+                      class="customphoto"
+                      alt="{{ category.title }}"
+                    />
+                  </td>
+
+                  <td>
+                    <b>{{ category.title }}</b>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-12 tm-block-col">
+          <div class="tm-block tm-block-taller tm-block-scroll">
+            <h2 class="tm-block-title text-black">USER LIST</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col " class="text-danger"><b>USER PHOTO</b></th>
+
+                  <th scope="col " class="text-danger"><b>USER NAM</b>E</th>
+                  <th scope="col " class="text-danger"><b>STATUS</b></th>
+
+                  <th scope="col " class="text-danger"><b>EMAIL</b></th>
+                  <th scope="col " class="text-danger"><b>USER ID</b></th>
+
+                  <!-- <th scope="col">LOCATION</th>
+                                    <th scope="col">JOIN DATE</th> -->
+                </tr>
+              </thead>
+              <tbody *ngFor="let user of users">
+                <tr>
+                  <td>
+                    <img
+                      [src]="getImage(user.photo)"
+                      class="customphoto"
+                      alt="{{ user.username }}"
+                    />
+                  </td>
+
+                  <!-- <td>
+                                        <div class="tm-status-circle moving">
+                                        </div>Moving{{user.activ}}
+                                    </td> -->
+
+                  <td>
+                    <b>{{ user.username }}</b>
+                  </td>
+                  <td><b>active</b></td>
+
+                  <td>
+                    <b>{{ user.email }}</b>
+                  </td>
+                  <th scope="row">#{{ user._id }}</th>
+
+                  <!-- <td><b>485 km</b></td>
+                                    <td>16:00, 12 NOV 2018</td>
+                                    <td>08:00, 18 NOV 2018</td> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

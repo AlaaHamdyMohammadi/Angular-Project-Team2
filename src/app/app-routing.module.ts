@@ -11,11 +11,18 @@ import { UpdateSubCategoryComponent } from './components/sub-categories/update-s
 import { AddCourseComponent } from './components/courses/AddCourse/add-course/add-course.component';
 import { UpdateCourseComponent } from './components/courses/UpdateCourse/update-course/update-course.component';
 import { InstructorsComponent } from './components/instructors/instructors.component';
+import { HomeComponent } from './components/home/home/home.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginPageComponent, title: 'Login Page' },
+  {
+    path: 'home',
+    component: HomeComponent,
+    title: 'home',
+    canActivate: [adminGuard],
+  },
   {
     path: 'courses',
     component: CoursesComponent,

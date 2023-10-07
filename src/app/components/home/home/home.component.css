@@ -1,0 +1,12 @@
+.customphoto{
+  height:50px;
+  width:50px;
+}
+
+.customchart{
+  /* font-weight:1rem !important; */
+  color:#eb9494 !important;
+  /* width:100% !important; */
+  /* height:100% !important; */
+  font-size:5rem;
+}

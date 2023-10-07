@@ -23,6 +23,14 @@ import { AddCourseComponent } from './components/courses/AddCourse/add-course/ad
 import { UpdateCourseComponent } from './components/courses/UpdateCourse/update-course/update-course.component';
 import { InstructorsComponent } from './components/instructors/instructors.component';
 import { SearchComponent } from './components/search/search.component';
+import { NgChartsModule } from 'ng2-charts';
+import { Chart } from 'chart.js';
+import { BarChartComponent } from './components/home/home/bar charts/bar-chart/bar-chart.component';
+import { LineChartComponent } from './components/home/home/line charts/line-chart/line-chart.component';
+import { PieChartComponent } from './components/home/home/pie charts/pie-chart/pie-chart.component';
+import { AbovrChartsComponent } from './components/home/home/first/abovr-charts/abovr-charts.component';
+import { Bar2ChartsComponent } from './components/home/bar2-charts/bar2-charts.component';
+import { HomeComponent } from './components/home/home/home.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +51,12 @@ import { SearchComponent } from './components/search/search.component';
     UpdateCourseComponent,
     InstructorsComponent,
     SearchComponent,
-  
+    HomeComponent,
+    BarChartComponent,
+    LineChartComponent,
+    PieChartComponent,
+    AbovrChartsComponent,
+    Bar2ChartsComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +66,7 @@ import { SearchComponent } from './components/search/search.component';
     NgxSpinnerModule,
     ToastrModule.forRoot(),
     HttpClientModule,
+    NgChartsModule,
   ],
   providers: [
     {
