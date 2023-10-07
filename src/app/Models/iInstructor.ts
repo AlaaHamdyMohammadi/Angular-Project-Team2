@@ -5,6 +5,10 @@ export interface iInstructor {
   photo: string;
   password: string;
   passwordConfirm: string;
+  lastCourse?: string;
+  instructorRating?: number;
+  instructorStudents?: number;
+  numberOfCourses?: number;
   role: InstructorRole;
 }
 
