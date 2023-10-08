@@ -15,6 +15,13 @@ export class CoursesService {
     };
   }
 
+  totalCourses(): Observable<ICourse[]> {
+    return this.httpClient
+      .get<ICourse[]>(`${environment.BaseApiURL}/courses`)
+      .pipe(map((res: any) => res.data.courses));
+  }
+
+  //: Observable<ICourse[]>
   getAllCourses(page: number = 1, limit: number = 15): Observable<ICourse[]> {
     const params = new HttpParams()
       .set('page', page.toString())
@@ -23,6 +30,12 @@ export class CoursesService {
       .get<ICourse[]>(`${environment.BaseApiURL}/courses`, { params })
       .pipe(map((res: any) => res.data.courses));
   }
+
+  // totalCourses(): Observable<ICourse[]> {
+  //   return this.httpClient
+  //     .get<ICourse[]>(`${environment.BaseApiURL}/courses`)
+  //     .pipe(map((res: any) => res.data.courses));
+  // }
 
   getAllCoursesBySearch(searchTerm: string): Observable<ICourse[]> {
     return this.getAllCourses().pipe(

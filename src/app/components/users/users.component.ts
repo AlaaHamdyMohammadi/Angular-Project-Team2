@@ -15,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 export class UsersComponent implements OnInit {
   users: iUser[] = [];
   user: iUser = {} as iUser;
-  page: number=1;
+  page: number = 1;
 
   constructor(
     private usersServ: UsersService,
@@ -28,24 +28,25 @@ export class UsersComponent implements OnInit {
     this.usersPage();
   }
 
-  usersPage(){
-    this.usersServ.getAllUsers(this.page).subscribe((data) => {
+  //this.page
+  usersPage() {
+    this.usersServ.getAllUsers().subscribe((data) => {
       console.log(data);
       this.users = data;
       this.spinner.hide();
     });
   }
 
-  nextPage(){
+  nextPage() {
     this.spinner.show();
     this.page++;
     this.usersPage();
-  };
-  prevPage(){
+  }
+  prevPage() {
     this.spinner.show();
     this.page--;
     this.usersPage();
-  };
+  }
 
   getImage(photo: string): string {
     return `http://127.0.0.1:4000/img/users/${photo}`;

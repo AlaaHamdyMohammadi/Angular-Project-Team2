@@ -23,45 +23,44 @@ export class HomeComponent {
     subcategories:iSubCategory[]=[];
     courses:ICourse[]=[];
     getImage(photo: String): String{
-      console.log(photo);
+      //console.log(photo);
 
       return `http://127.0.0.1:4000/img/users/${photo}`;
     }
 
 
     getImageCAT(photo: String): String{
-      console.log(photo);
+      //console.log(photo);
 
       return `http://127.0.0.1:4000/img/categories/${photo}`;
     }
 
   ngOnInit(): void{
     this.usersesServ.getAllUsers().subscribe(data => {
-      console.log(data);
+      //console.log(data);
       this.users = data;
-      console.log(this.users.length);
+      //console.log(this.users.length);
 
     })
 
     this.categorysesServ.getAllCategories().subscribe(data => {
-      console.log(data);
+      //console.log(data);
       this.categories = data;
-      console.log(this.categories.length);
+      //console.log(this.categories.length);
 
     })
 
     this.subcategorysesServ.getAllSubCategories().subscribe(data => {
-      console.log(data);
+      //console.log(data);
       this.subcategories = data;
-      console.log(this.subcategories.length);
+      //console.log(this.subcategories.length);
 
     })
-    this.coursesServ.getAllCourses().subscribe(data => {
+    this.coursesServ.totalCourses().subscribe((data) => {
       console.log(data);
       this.courses = data;
       console.log(this.courses.length);
-
-    })
+    });
 
   }
 
