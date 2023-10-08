@@ -30,7 +30,7 @@ export class UsersComponent implements OnInit {
 
   //this.page
   usersPage() {
-    this.usersServ.getAllUsers().subscribe((data) => {
+    this.usersServ.getAllUsers(this.page).subscribe((data) => {
       console.log(data);
       this.users = data;
       this.spinner.hide();

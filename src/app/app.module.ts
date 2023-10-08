@@ -31,6 +31,7 @@ import { PieChartComponent } from './components/home/home/pie charts/pie-chart/p
 import { AbovrChartsComponent } from './components/home/home/first/abovr-charts/abovr-charts.component';
 import { Bar2ChartsComponent } from './components/home/bar2-charts/bar2-charts.component';
 import { HomeComponent } from './components/home/home/home.component';
+import { DetialsComponent } from './components/Detials/detials/detials.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { HomeComponent } from './components/home/home/home.component';
     InstructorsComponent,
     SearchComponent,
     HomeComponent,
+    DetialsComponent,
     BarChartComponent,
     LineChartComponent,
     PieChartComponent,

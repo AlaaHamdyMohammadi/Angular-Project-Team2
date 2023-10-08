@@ -141,8 +141,8 @@ export class UpdateCourseComponent {
       {
         next:()=>{
           console.log(this.Course);
-              //this.router.navigate([`/Detials/${this.Course._id}`])
-              this.router.navigate([`/courses`])
+              this.router.navigate([`/Detials/${this.Course._id}`])
+              // this.router.navigate([`/courses`])
         },
 
         error:(err)=>{

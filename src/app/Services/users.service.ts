@@ -16,7 +16,7 @@ export class UsersService {
     };
   }
 
-  getAllUsers(page: number = 1, limit: number = 15): Observable<iUser[]> {
+  getAllUsers(page: number = 1, limit: number = 20): Observable<iUser[]> {
     const params = new HttpParams()
       .set('page', page.toString())
       .set('limit', limit.toString());
@@ -29,6 +29,8 @@ export class UsersService {
         )
       );
   }
+
+
 
   // getAllUsers(): Observable<iUser[]> {
   //   return this.httpClient.get<iUser>(`${environment.BaseApiURL}/users`).pipe(

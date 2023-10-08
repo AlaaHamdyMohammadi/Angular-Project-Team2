@@ -12,6 +12,7 @@ import { AddCourseComponent } from './components/courses/AddCourse/add-course/ad
 import { UpdateCourseComponent } from './components/courses/UpdateCourse/update-course/update-course.component';
 import { InstructorsComponent } from './components/instructors/instructors.component';
 import { HomeComponent } from './components/home/home/home.component';
+import { DetialsComponent } from './components/Detials/detials/detials.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,12 @@ const routes: Routes = [
     title: 'Courses Page',
     canActivate: [adminGuard],
   },
+  {
+    path: 'Detials/:courseId',
+    component: DetialsComponent,
+    title: 'Course Detials',
+  },
+
   {
     path: 'search/:searchTerm',
     component: CoursesComponent,

@@ -9,20 +9,26 @@
         class="card imgHeight text-center shadow"
         style="width: 20rem; height: 20rem"
       >
-        <img [src]="getImage(course.photo)" class="rounded-t-md" alt="{{ course.title }}" />
+        <img
+          [src]="getImage(course.photo)"
+          [routerLink]="['/Detials', course._id]"
+          class="rounded-t-md"
+          alt="{{ course.title }}"
+        />
         <h5 class="card-title p-2 testColor">{{ course.title }}</h5>
         <p class="card-text p-2">{{ course.price | currency }}</p>
         <p class="card-text p-2">{{ course.instructor }}</p>
         <div class="text-center p-2 mt-3 d-flex">
           <button
             class="border-1 mr-1 editBtn bg-gray-200 w-50 border-black hover:text-white p-2 hover:border-none"
-            (click)="deleteCourse(course._id)">
+            (click)="deleteCourse(course._id)"
+          >
             Delete
           </button>
           <button
             class="border-1 ml-1 editBtn bg-gray-200 w-50 border-black hover:text-white p-2 hover:border-none"
             (click)="updateCourseCOMP(course._id)"
-            >
+          >
             Update
           </button>
         </div>

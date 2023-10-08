@@ -1,0 +1,248 @@
+<div class="shadow">
+  <div class="container-fluid mt-2 mb-5">
+    <div class="row">
+      <div class="col-md-5 pr-2">
+        <div class="shadow border my-2  border-10">
+          <div class=" border border-10 ">
+            <img
+              [src]="getImage(Course.photo)"
+              class="d-block mt-3 w-100"
+              alt="..."
+            />
+          </div>
+
+          <div
+            class="d-flex justify-content-center m-2"
+            role="group"
+            aria-label="Basic example"
+          >
+            <button class="border-0" (click)="previousPrd(Course._id)">
+              <i class="fa-solid fa-angles-left fs-4 text-danger"></i>
+            </button>
+            <button class="border-0" (click)="nextPrd(Course._id)">
+              <i class="fa-solid fa-angles-right text-danger fs-4"></i>
+            </button>
+          </div>
+        </div>
+        <a
+          href="#"
+          class="block p-4 my-1 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        >
+          <div class="flex flex-row justify-content-between">
+            <div class="">
+              <div class="text-gray-500 text-sm">FREE/PAID</div>
+              <div class="font-semibold ">
+                {{ Course.priceType }}
+              </div>
+              <!-- <span class="bg-purple-200 tm-block 	p-1 "><i class=" fa-solid    fa-chart-line "></i> 76%</span> -->
+            </div>
+            <!-- <div class="w-50 h-50 	 	pt-2 flex-1"><i class="fa-solid customchart fa-chart-simple"></i></div> -->
+
+            <div class="">
+              <div class="text-gray-500 text-sm">DISCOUNT PRICE</div>
+              <div class="font-semibold ">
+                EGP {{ Course.DiscountPrice }}
+              </div>
+              <!-- <span class="bg-purple-200 t3
+
+
+                        +m-block 	p-1 "><i class=" fa-solid    fa-chart-line "></i> 76%</span> -->
+            </div>
+
+            <div class="">
+              <div class="text-gray-500 text-sm">PRICE</div>
+              <div class="font-semibold line-through ">
+                EGP{{ Course.price }}
+              </div>
+              <!-- <span class="bg-purple-200 tm-block 	p-1 "><i class=" fa-solid    fa-chart-line "></i> 76%</span> -->
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="#"
+          class="block p-4 my-1 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        >
+          <div class="flex flex-row justify-content-between">
+            <div class="">
+              <div class="text-gray-500 text-sm">TOTAL LECTURES</div>
+              <div class="font-semibold ">
+                {{ Course.lectures }} lectures
+              </div>
+              <!-- <span class="bg-purple-200 tm-block 	p-1 "><i class=" fa-solid    fa-chart-line "></i> 76%</span> -->
+            </div>
+            <!-- <div class="w-50 h-50 	 	pt-2 flex-1"><i class="fa-solid customchart fa-chart-simple"></i></div> -->
+            <div class="">
+              <div class="text-gray-500 text-sm">TOTAL ARTICLES</div>
+              <div class="font-semibold ">
+                {{ Course.articles }} articles
+              </div>
+              <!-- <span class="bg-purple-200 tm-block 	p-1 "><i class=" fa-solid    fa-chart-line "></i> 76%</span> -->
+            </div>
+            <div class="">
+              <div class="text-gray-500 text-sm">TOTAL RESOURCES</div>
+              <div class="font-semibold ">
+                {{ Course.resources }} resources
+              </div>
+              <!-- <span class="bg-purple-200 t3
+
+
+                          +m-block 	p-1 "><i class=" fa-solid    fa-chart-line "></i> 76%</span> -->
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="#"
+          class="block p-4 my-1 mb-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        >
+          <div class="flex flex-row justify-content-between">
+            <div class="">
+              <div class="text-gray-500 text-sm">TOTAL EXERCIESES</div>
+              <div class="font-semibold ">
+                {{ Course.exercises }} exercises
+              </div>
+              <!-- <span class="bg-purple-200 tm-block 	p-1 "><i class=" fa-solid    fa-chart-line "></i> 76%</span> -->
+            </div>
+            <!-- <div class="w-50 h-50 	 	pt-2 flex-1"><i class="fa-solid customchart fa-chart-simple"></i></div> -->
+            <div class="">
+              <div class="text-gray-500 text-sm">TOTAL SECtions</div>
+              <div class="font-semibold ">
+                {{ Course.sections }} sections
+              </div>
+              <!-- <span class="bg-purple-200 tm-block 	p-1 "><i class=" fa-solid    fa-chart-line "></i> 76%</span> -->
+            </div>
+            <div class="">
+              <div class="text-gray-500 text-sm">TOTAL STUDENTS</div>
+              <div class="font-semibold ">{{ Course.NumStd }} students</div>
+              <!-- <span class="bg-purple-200 tm-block 	p-1 "><i class=" fa-solid    fa-chart-line "></i> 76%</span> -->
+            </div>
+          </div>
+        </a>
+
+
+      </div>
+      <div class="col-md-7">
+        <div class="card">
+          <div class="mt-4">
+            <span class="text-4xl font-black">{{ Course.title }} </span>
+            <div class="text-xl mt-3 mb-1">{{ Course.subTitle }}</div>
+          </div>
+
+          <div class="flex flex-row  mb-1 justify-content-between">
+            <div>
+              <span class="p-ratings font-bold text-yellow-400">
+                {{ Course.rating }}
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </span>
+              <span class="ml-1 text-gray-500">
+                ({{ Course.NumRating }} ratings)
+              </span>
+            </div>
+
+            <div class=" flex flex-col">
+
+              <span class="font-bold text-3xl text-red-600">
+                EGP {{ Course.price }}
+
+               </span>
+               <div class="line-through text-gray-500 text-sm">
+                EGP {{ Course.DiscountPrice }}
+
+               </div>
+
+            </div>
+
+
+          </div>
+
+          <div className="text-sm	">
+            <span className="flex flex-col ">
+              <span
+                className="custom flex items-center font-bold text-yellow-500"
+              >
+                <div class="update mt-0">
+                  <span class="my-1 text-green-700 bg-green-100">
+                    {{ Course.BestSeller }}</span
+                  >
+                </div>
+              </span>
+
+              <!-- <span className="p-2">{{ Course.NumStd }} students</span> -->
+            </span>
+
+            <div>
+              <span class="font-bold"> Created by : </span>
+              <a class="text-gray-500 pr-1" href="#">
+                {{ Course.instructor }}
+              </a>
+            </div>
+
+            <div>
+              <span class="font-bold"> Duration : </span>
+              <a class="text-gray-500 pr-1" href="#">
+                {{ Course.duration }} hours
+              </a>
+            </div>
+            <div>
+              <span class="flex ">
+                <span class="font-bold"> Last updated : </span>
+                <a class="text-gray-500 pr-1" href="#">
+                  {{ Course.updated }}
+                </a>
+              </span>
+            </div>
+          </div>
+
+          <!-- <span class="d-flex flex-row text-gray-500 align-items-center gap-6">
+            <span class="p-1">{{ Course.sections }} sections</span>
+            <span class="p-1">{{ Course.lectures }} lectures</span>
+            <span class="p-1">{{ Course.duration }} total length</span>
+          </span> -->
+          <div></div>
+
+          <!-- <hr /> -->
+          <div class="product-description">
+            <div class="mt-2">
+              <div class="font-bold text-2xl">Description</div>
+
+              <span *ngIf="!showMore">{{
+                Course.description | slice : 0 : 500
+              }}</span>
+              <span *ngIf="showMore">{{ Course.description }}</span>
+              <button class="text-danger mx-3 font-bold" (click)="toggleShowMore()">
+                {{ showMore ? "Show Less" : "Show More" }}
+              </button>
+            </div>
+
+            <div class=" mt-4 buttons flex flex-row flex-3">
+              <button
+                class="btn grow btn-outline-warning btn-long cart"
+                (click)="updateCourseCOMP(Course._id)"
+              >
+                Edit
+              </button>
+              <button
+                class="btn  grow btn-warning btn-long buy"
+                (click)="deleteCourse(Course._id)"
+              >
+                Delete
+              </button>
+
+              <button
+                class="btn grow btn-outline-warning btn-long cart"
+                [routerLink]="['/courses']"
+              >
+                Back
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
