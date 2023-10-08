@@ -1,8 +1,6 @@
 .editBtn{
-  background-color: rgb(137, 71, 199);
+  background-color: #ea6664;
   height: 50px;
-  /* width: 100%; */
-  margin-left: 3%;
   color: white;
   font-weight: 700;
   font-size: 1.2rem;
@@ -14,8 +12,6 @@
 .inputEdit{
   border-radius: 0%;
   border-color: black;
+  color: black;
 }
 
-/* .test{
-height: 150% !important;
-} */

@@ -198,17 +198,4 @@ export class AddCourseComponent {
   //
 
 
-  // onSubmit(){
-  //   const formData = new FormData();
-  //   formData.append('photo', this.images);
-  //    console.log(this.images)
-
-    // this.http.post<any>('http://localhost:4000/courses', formData).subscribe(
-    //   (res) => console.log(res),
-    //   (err) => console.log(err)
-    // );
-  // }
-
-
-
 }

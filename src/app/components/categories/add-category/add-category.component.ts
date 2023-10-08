@@ -9,63 +9,59 @@ import { CategoriesService } from 'src/app/Services/categories.service';
   styleUrls: ['./add-category.component.css'],
 })
 export class AddCategoryComponent {
-  //formData: FormData;
-  Category: iCategory = {} as iCategory;
+  images: any;
+  // multipleImages = [];
+  formData: FormData;
 
-  constructor(private categoryServ: CategoriesService, private router: Router) {
-    //this.formData = new FormData();
+  constructor(
+    private categoriesServ: CategoriesService,
+    private router: Router
+  ) {
+    this.formData = new FormData();
   }
 
+  Category: iCategory = {} as iCategory;
+
+  categories: iCategory[] = [];
+
+  file: any = {};
   selectImage(event: any): void {
-    //const formData = new FormData();
+    // const formData = new FormData();
 
     if (event.target.files.length > 0) {
-      const file = event.target.files[0];
+      this.file = event.target.files[0];
       //   this.images = file;
-      console.log(file);
+      console.log(this.file.name);
 
-      //this.formData.set('photo', file);
+      this.formData.append('photo', this.file);
     }
     // const file = files.item(0);
   }
 
-
-  // addNewCategory(formDatae: FormData): void {
-  //   console.log('ih adddddddddddd');
-  //   console.log(formDatae);
-
-  //   this.categoryServ.createCategory(formDatae).subscribe({
-  //     next: () => {
-  //       console.log('test creatttttttttttttt');
-
-  //       this.router.navigate(['/categories']);
-  //     },
-
-  //     error: (err) => {
-  //       console.log(err);
-  //     },
-  //   });
-  // }
-
-  addNewCategory() {
-    // const formData = new FormData();
-    // formData.append('photo', this.images);
-    //  console.log(this.Course.photo)
-    //  console.log(this.Course)
-    //  console.log('ih adddddddddddd')
-
-    this.categoryServ.createCategory(this.Category).subscribe({
-      next: (Category) => {
-        console.log('test creatttttttttttttt');
-
-        console.log(Category);
-
-        this.router.navigate(['/categories']);
-      },
-
-      error: (err) => {
-        console.log(err);
-      },
-    });
+  getImage(): String {
+    return `http://127.0.0.1:4000/img/categories/${this.file.name}`;
   }
+
+
+  addNewCategory(formDatae: any): void {
+
+    console.log('tttttttttttttttttttttttttttt', this.formData);
+    this.formData.append('name', formDatae.value.name);
+    this.formData.append('description', formDatae.value.description);
+
+    console.log(this.formData);
+
+    this.categoriesServ.creatCategory(this.formData).subscribe(
+      {
+        next: () => {
+          console.log('test creatttttttttttttt');
+          this.router.navigate(['/categories']);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      }
+    );
+  }
+
 }

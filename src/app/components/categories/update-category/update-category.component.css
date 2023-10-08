@@ -1,5 +1,5 @@
 .editBtn{
-  background-color: rgb(137, 71, 199);
+  background-color: #ea6664;
   height: 50px;
   color: white;
   font-weight: 700;
@@ -12,4 +12,9 @@
 .inputEdit{
   border-radius: 0%;
   border-color: black;
+
+}
+
+.dropColor{
+  color: #ea6664;
 }

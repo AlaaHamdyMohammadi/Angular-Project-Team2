@@ -16,7 +16,10 @@ export class CategoriesService {
     };
   }
 
-  getAllCategories(page: number = 1, limit: number = 15): Observable<iCategory[]> {
+  getAllCategories(
+    page: number = 1,
+    limit: number = 15
+  ): Observable<iCategory[]> {
     const params = new HttpParams()
       .set('page', page.toString())
       .set('limit', limit.toString());
@@ -35,33 +38,32 @@ export class CategoriesService {
     );
   }
 
+  getCategoryById(categoryId: number): Observable<iCategory> {
+    return this.httpClient.get<iCategory>(
+      `${environment.BaseApiURL}/categories/${categoryId}`
+    );
+  } 
+
+  creatCategory(newCategory: FormData): Observable<any> {
+    return this.httpClient.post<any>(
+      `${environment.BaseApiURL}/categories`,
+      newCategory
+    );
+  }
+
+  //
+  updateCategory(updateCategory: FormData, id: number) {
+    console.log('in service', id);
+    return this.httpClient.patch<any>(
+      `${environment.BaseApiURL}/categories/${id}`,
+      updateCategory
+    );
+  }
+
   deleteCategory(categoryId: number): Observable<void> {
     console.log('service', categoryId);
     return this.httpClient.delete<void>(
       `${environment.BaseApiURL}/categories/${categoryId}`
-    );
-  }
-
-  // createCategory(newCategory: FormData): Observable<any> {
-  //   return this.httpClient.post<any>(
-  //     `${environment.BaseApiURL}/categories`,
-  //     newCategory
-  //   );
-  // }
-
-  createCategory(newCategory: iCategory): Observable<iCategory> {
-    return this.httpClient.post<iCategory>(
-      `${environment.BaseApiURL}/categories`,
-      JSON.stringify(newCategory),
-      this.http
-    );
-  }
-
-  updateCategory(updateCategory: iCategory) {
-    return this.httpClient.patch<iCategory>(
-      `${environment.BaseApiURL}/categories/${updateCategory._id}`,
-      JSON.stringify(updateCategory),
-      this.http
     );
   }
 }

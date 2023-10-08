@@ -3,7 +3,7 @@ import { iCategory } from 'src/app/Models/iCategory';
 import { CategoriesService } from 'src/app/Services/categories.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
-
+ 
 import { Router } from '@angular/router';
 
 @Component({
