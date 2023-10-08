@@ -16,6 +16,17 @@ export class InstructorsService {
     };
   }
 
+  totalInstructors(): Observable<iInstructor[]> {
+    return this.httpClient
+      .get<iInstructor>(`${environment.BaseApiURL}/users`)
+      .pipe(
+        map((res: any) => res.data.documents),
+        map((users: iInstructor[]) =>
+          users.filter((user) => user.role === InstructorRole.User)
+        )
+      );
+  }
+
   getAllInstructors(page: number = 1, limit = 15): Observable<iInstructor[]> {
     const params = new HttpParams()
       .set('page', page.toString())
