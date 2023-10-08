@@ -16,7 +16,16 @@ export class UsersService {
     };
   }
 
-  getAllUsers(page: number = 1, limit: number = 20): Observable<iUser[]> {
+  totalUsers(): Observable<iUser[]>{
+    return this.httpClient.get<iUser>(`${environment.BaseApiURL}/users`).pipe(
+      map((res: any) => res.data.documents),
+      map((users: iUser[]) =>
+        users.filter((user) => user.role === UserRole.User)
+      )
+    );
+  }
+
+  getAllUsers(page: number = 1, limit: number = 15): Observable<iUser[]> {
     const params = new HttpParams()
       .set('page', page.toString())
       .set('limit', limit.toString());

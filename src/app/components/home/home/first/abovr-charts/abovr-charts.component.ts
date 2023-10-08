@@ -22,12 +22,11 @@ export class AbovrChartsComponent  implements OnInit{
 
 
   ngOnInit(): void{
-    this.usersesServ.getAllUsers().subscribe(data => {
+    this.usersesServ.totalUsers().subscribe((data) => {
       //console.log(data);
       this.users = data;
       //console.log(this.users.length);
-
-    })
+    });
 
     this.categorysesServ.getAllCategories().subscribe(data => {
       //console.log(data);

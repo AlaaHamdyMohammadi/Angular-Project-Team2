@@ -31,12 +31,6 @@ export class CoursesService {
       .pipe(map((res: any) => res.data.courses));
   }
 
-  // totalCourses(): Observable<ICourse[]> {
-  //   return this.httpClient
-  //     .get<ICourse[]>(`${environment.BaseApiURL}/courses`)
-  //     .pipe(map((res: any) => res.data.courses));
-  // }
-
   getAllCoursesBySearch(searchTerm: string): Observable<ICourse[]> {
     return this.getAllCourses().pipe(
       map((courses) =>
