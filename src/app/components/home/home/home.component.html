@@ -6,7 +6,7 @@
         <!-- <app-bar2-charts></app-bar2-charts> -->
 
         <!-- app-abovr-charts -->
-        
+
         <!-- app-abovr-charts -->
       </div>
       <!-- row -->
@@ -106,6 +106,57 @@
                     <b>{{ user.email }}</b>
                   </td>
                   <th scope="row">#{{ user._id }}</th>
+
+                  <!-- <td><b>485 km</b></td>
+                                    <td>16:00, 12 NOV 2018</td>
+                                    <td>08:00, 18 NOV 2018</td> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+       <div class="col-12 tm-block-col">
+          <div class="tm-block tm-block-taller tm-block-scroll">
+            <h2 class="tm-block-title text-black">INSTRUCTOR LIST</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col " class="text-danger"><b>INSTRUCTOR PHOTO</b></th>
+
+                  <th scope="col " class="text-danger"><b>INSTRUCTOR NAM</b>E</th>
+                  <th scope="col " class="text-danger"><b>STATUS</b></th>
+
+                  <th scope="col " class="text-danger"><b>EMAIL</b></th>
+                  <th scope="col " class="text-danger"><b>INSTRUCTOR ID</b></th>
+
+                  <!-- <th scope="col">LOCATION</th>
+                                    <th scope="col">JOIN DATE</th> -->
+                </tr>
+              </thead>
+              <tbody *ngFor="let instructor of instructors">
+                <tr>
+                  <td>
+                    <img
+                      [src]="getImage(instructor.photo)"
+                      class="customphoto rounded-full"
+                      alt="{{ instructor.username }}"
+                    />
+                  </td>
+
+                  <!-- <td>
+                                        <div class="tm-status-circle moving">
+                                        </div>Moving{{user.activ}}
+                                    </td> -->
+
+                  <td>
+                    <b>{{ instructor.username }}</b>
+                  </td>
+                  <td><b>active</b></td>
+
+                  <td>
+                    <b>{{ instructor.email }}</b>
+                  </td>
+                  <th scope="row">#{{ instructor._id }}</th>
 
                   <!-- <td><b>485 km</b></td>
                                     <td>16:00, 12 NOV 2018</td>
