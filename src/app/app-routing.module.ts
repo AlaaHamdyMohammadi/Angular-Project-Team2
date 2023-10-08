@@ -13,6 +13,7 @@ import { UpdateCourseComponent } from './components/courses/UpdateCourse/update-
 import { InstructorsComponent } from './components/instructors/instructors.component';
 import { HomeComponent } from './components/home/home/home.component';
 import { DetialsComponent } from './components/Detials/detials/detials.component';
+import { UpdateCategoryComponent } from './components/categories/update-category/update-category.component';
 
 
 const routes: Routes = [
@@ -96,7 +97,7 @@ const routes: Routes = [
   },
   {
     path: 'UpdateCategory/:categoryId',
-    component: UpdateSubCategoryComponent,
+    component: UpdateCategoryComponent,
     title: 'Update Category Page',
     canActivate: [adminGuard],
   },

@@ -3,7 +3,7 @@ import { iCategory } from 'src/app/Models/iCategory';
 import { CategoriesService } from 'src/app/Services/categories.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
- 
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -48,6 +48,12 @@ export class CategoriesComponent implements OnInit {
 
   getImage(photo: string): string {
     return `http://127.0.0.1:4000/img/categories/${photo}`;
+  }
+
+  updateCategoryCOMP(itemid: number) {
+    console.log(itemid);
+
+    this.router.navigate([`UpdateCategory/${itemid}`]);
   }
 
   deleteCategory(id: number) {

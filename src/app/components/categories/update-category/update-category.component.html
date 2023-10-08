@@ -1,1 +1,104 @@
-<p>update-category works!</p>
+ <div class="container tm-mt-big tm-mb-big">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mx-auto">
+      <div class="bg-white tm-block tm-block-h-auto">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="tm-block-title text-dark d-inline-block text-2xl">Update Category</h2>
+          </div>
+         </div>
+        <div class="row tm-edit-product-row">
+          <form
+            action=""
+            class="row text-dark"
+            (ngSubmit)="updateCategory(formDatae)"
+            #formDatae="ngForm"
+          >
+            <div class="">
+              <div class="text-dark">
+                 <div class="mx-auto">
+                  <img
+                    [src]="getImage(Category.photo)"
+                    class="w-100"
+                    alt="{{ Category.name }}"
+                  />
+                </div>
+                <div class="mb-2">
+                <!-- <input id="fileInput" type="file" style="display:none;" /> -->
+                <input
+                  type="file"
+
+                  class="editBtn col-12 text-uppercase mx-auto"
+                  value="UPLOAD PRODUCT IMAGE"
+                  (change)="selectImage($event)"
+                />
+              </div>
+                <label class="text-dark fw-bold" for="name"
+                  >Category name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Category.name"
+                  #name="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (name.touched || name.dirty) && name.invalid
+                  }"
+                  placeholder="Category name (required)"
+                  minlength="4"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="name.errors?.['required']"
+                    >Please enter Name
+                  </span>
+                  <span *ngIf="name.errors?.['minlength']">
+                    name must be at least 4 characters</span
+                  >
+                </span>
+
+                <label class="text-dark fw-bold" for="name"
+                  >Category description
+                </label>
+                <input
+                  id="name"
+                  name="description"
+                  type="text"
+                  class="form-control mb-2 inputEdit border border-1 border-black validate"
+                  [(ngModel)]="Category.description"
+                  required
+                  #description="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      (description.touched || description.dirty) && description.invalid
+                  }"
+                  placeholder="Category description (required)"
+                  minlength="50"
+                />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="description.errors?.['required']"
+                    >Please enter SubTitle
+                  </span>
+                  <span *ngIf="description.errors?.['minlength']">
+                    Description must be at least 50 characters</span
+                  >
+                </span>
+              </div>
+
+            </div>
+            <div class="row">
+              <!-- <button type="submit" class=" editBtn col-12 text-uppercase" [hidden]="Courseform.invalid">Add Course Now</button> -->
+              <button type="submit" class="editBtn col-12 ml-3 mt-2 text-uppercase">
+                Update Category Now
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
