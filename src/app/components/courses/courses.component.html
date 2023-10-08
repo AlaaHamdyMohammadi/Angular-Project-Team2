@@ -5,19 +5,27 @@
 
   <div class="row">
     <div class="col-4 mb-2 p-4" *ngFor="let course of courses">
-      <div
-        class="card imgHeight text-center shadow"
-        style="width: 20rem; height: 20rem"
-      >
+      <div class="card imgHeight shadow" style="width: 20rem; height: 21rem">
         <img
           [src]="getImage(course.photo)"
           [routerLink]="['/Detials', course._id]"
           class="rounded-t-md"
           alt="{{ course.title }}"
         />
-        <h5 class="card-title p-2 testColor">{{ course.title }}</h5>
-        <p class="card-text p-2">{{ course.price | currency }}</p>
-        <p class="card-text p-2">{{ course.instructor }}</p>
+        <div class="flex flex-col">
+          <h5 class="card-title pt-2 font-bold pl-2 testColor">{{ course.title }}</h5>
+          <p class="text-sm pl-2">by : {{ course.instructor }}</p>
+          <div>
+            <span class="font-bold p-2">EGP{{ course.price }}</span>
+            <span class="line-through text-sm text-gray-500 ml-3"
+              >EGP{{ course.DiscountPrice }}</span
+            >
+          </div>
+          <div class="pl-2 text-yellow-500">
+            <span class="font-bold">{{ course.rating }}</span>
+            <span><i class="fa fa-star"></i></span>
+          </div>
+        </div>
         <div class="text-center p-2 mt-3 d-flex">
           <button
             class="border-1 mr-1 editBtn bg-gray-200 w-50 border-black hover:text-white p-2 hover:border-none"
