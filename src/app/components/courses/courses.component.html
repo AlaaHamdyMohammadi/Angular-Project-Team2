@@ -5,14 +5,14 @@
 
   <div class="row">
     <div class="col-4 mb-2 p-4" *ngFor="let course of courses">
-      <div class="card imgHeight shadow" style="width: 20rem; height: 21rem">
+      <div class="card imgHeight shadow flex flex-col" style="width: 20rem;">
         <img
           [src]="getImage(course.photo)"
           [routerLink]="['/Detials', course._id]"
-          class="rounded-t-md"
+          class="rounded-t-md flex-2"
           alt="{{ course.title }}"
         />
-        <div class="flex flex-col">
+        <div class="flex-2 flex-col">
           <h5 class="card-title pt-2 font-bold pl-2 testColor">{{ course.title }}</h5>
           <p class="text-sm pl-2">by : {{ course.instructor }}</p>
           <div>
@@ -26,15 +26,15 @@
             <span><i class="fa fa-star"></i></span>
           </div>
         </div>
-        <div class="text-center p-2 mt-3 d-flex">
+        <div class="text-center flex-1 flex-row p-2 mt-3">
           <button
-            class="border-1 mr-1 editBtn bg-gray-200 w-50 border-black hover:text-white p-2 hover:border-none"
+            class="border-1 editBtn bg-gray-200 w-50 border-black hover:text-white p-2 hover:border-none"
             (click)="deleteCourse(course._id)"
           >
             Delete
           </button>
           <button
-            class="border-1 ml-1 editBtn bg-gray-200 w-50 border-black hover:text-white p-2 hover:border-none"
+            class="border-1 editBtn bg-gray-200 w-50 border-black hover:text-white p-2 hover:border-none"
             (click)="updateCourseCOMP(course._id)"
           >
             Update
