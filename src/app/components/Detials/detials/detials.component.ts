@@ -80,16 +80,18 @@ export class DetialsComponent {
 
   ////////////////دايما بيقرأ 0/1
   previousPrd(ID: any) {
-    this.currentprdIndex = this.courses.indexOf(ID);
+    this.currentprdIndex = this.courses.findIndex((course) => { return course._id == ID});
+    console.log(this.currentprdIndex);
     const PreID = this.courses[--this.currentprdIndex]._id;
     this.router.navigate([`/Detials/${PreID}`]);
-    console.log(this.currentprdIndex);
   }
 
   nextPrd(ID: any) {
-    this.currentprdIndex = this.courses.indexOf(ID);
+    this.currentprdIndex = this.courses.findIndex((course) => {
+      return course._id == ID;
+    });
+    console.log(this.currentprdIndex);
     const PreID = this.courses[++this.currentprdIndex]._id;
     this.router.navigate([`/Detials/${PreID}`]);
-    console.log(this.currentprdIndex);
   }
 }
