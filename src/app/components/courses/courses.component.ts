@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   selector: 'app-courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css'],
-}) 
+})
 export class CoursesComponent implements OnInit {
   courses: ICourse[] = [];
   // searchTerm = '';
@@ -87,7 +87,7 @@ export class CoursesComponent implements OnInit {
     );
     if (confirmDelete) {
       this.coursesServ.deleteCourse(id).subscribe({
-        next: () => {
+        next: () => { 
           this.toaster.success('Successfully Deleted');
           this.coursesServ.getAllCourses().subscribe((data) => {
             this.courses = data;

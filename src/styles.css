@@ -7,6 +7,10 @@ https://templatemo.com/tm-524-product-admin
 
 */
 
+
+
+
+
 /* html {
   font-size: 16px;
   overflow-x: hidden;
@@ -185,7 +189,7 @@ button:focus {
 }
 .tm-notification-item {
   padding: 15px;
-  background-color: #4e657a;
+  background-color: #ea6664;
   color: #fff;
   font-size: 95%;
   margin-bottom: 15px;
@@ -556,10 +560,10 @@ input[type="checkbox"]:focus {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #394f62;
+  background: black;
 }
 ::-webkit-scrollbar-thumb {
-  background: #6d8da6;
+  background: #ea6664;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #8ab5d6;
