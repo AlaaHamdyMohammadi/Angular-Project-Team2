@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { iCategory } from 'src/app/Models/iCategory';
 import { CategoriesService } from 'src/app/Services/categories.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-category',
@@ -15,6 +16,7 @@ export class AddCategoryComponent {
 
   constructor(
     private categoriesServ: CategoriesService,
+    private toaster: ToastrService,
     private router: Router
   ) {
     this.formData = new FormData();
@@ -42,26 +44,22 @@ export class AddCategoryComponent {
     return `http://127.0.0.1:4000/img/categories/${this.file.name}`;
   }
 
-
   addNewCategory(formDatae: any): void {
-
-    console.log('tttttttttttttttttttttttttttt', this.formData);
+    //console.log('tttttttttttttttttttttttttttt', this.formData);
     this.formData.append('name', formDatae.value.name);
     this.formData.append('description', formDatae.value.description);
 
-    console.log(this.formData);
+    //console.log(this.formData);
 
-    this.categoriesServ.creatCategory(this.formData).subscribe(
-      {
-        next: () => {
-          console.log('test creatttttttttttttt');
-          this.router.navigate(['/categories']);
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      }
-    );
+    this.categoriesServ.creatCategory(this.formData).subscribe({
+      next: () => {
+        //console.log('test creatttttttttttttt');
+        this.toaster.success('Successfully Added');
+        this.router.navigate(['/categories']);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
-
 }

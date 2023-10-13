@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { iCategory } from 'src/app/Models/iCategory';
 import { CategoriesService } from 'src/app/Services/categories.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-category',
@@ -14,6 +15,7 @@ export class UpdateCategoryComponent {
   constructor(
     private categoryServ: CategoriesService,
     private router: Router,
+    private toaster: ToastrService,
     private route: ActivatedRoute
   ) {
     this.formData = new FormData();
@@ -53,29 +55,33 @@ export class UpdateCategoryComponent {
   }
 
   getCategoryInfo() {
-    this.categoryServ.getCategoryById(this.Category._id).subscribe((data: any) => {
-      //console.log(data);
-      this.Category = data.data.document;
-      console.log(this.Category.photo);
-    });
+    this.categoryServ
+      .getCategoryById(this.Category._id)
+      .subscribe((data: any) => {
+        //console.log(data);
+        this.Category = data.data.document;
+        console.log(this.Category.photo);
+      });
   }
 
   updateCategory(formDatae: any) {
-
-    console.log('tttttttttttttttttttttttttttt', this.formData);
+    //console.log('tttttttttttttttttttttttttttt', this.formData);
     this.formData.append('name', formDatae.value.name);
     this.formData.append('description', formDatae.value.description);
 
     console.log(formDatae);
 
-    this.categoryServ.updateCategory(this.formData, this.Category._id).subscribe({
-      next: () => {
-        console.log(this.Category);
-        this.router.navigate([`/categories`]);
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
+    this.categoryServ
+      .updateCategory(this.formData, this.Category._id)
+      .subscribe({
+        next: () => {
+          //console.log(this.Category);
+          this.toaster.success('Successfully Updated');
+          this.router.navigate([`/categories`]);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
   }
 }
