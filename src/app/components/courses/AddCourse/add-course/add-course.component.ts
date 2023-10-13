@@ -9,7 +9,7 @@ import { CategoriesService } from 'src/app/Services/categories.service';
 import { CoursesService } from 'src/app/Services/courses.service';
 import { SubCategoriesService } from 'src/app/Services/sub-categories.service';
 import { ToastrService } from 'ngx-toastr';
-
+ 
 @Component({
   selector: 'app-add-course',
   templateUrl: './add-course.component.html',

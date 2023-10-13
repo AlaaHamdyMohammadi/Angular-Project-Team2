@@ -4,15 +4,18 @@
   color: white;
   font-weight: 700;
   font-size: 1.2rem;
+   transform: none;
+  transition: 0.1s all;
 }
 .editBtn:hover{
-  transform: scale(.9);
+  transform: scale(0.95) translateZ(0px);
+  transition: 0.1s all;
 }
 
 .inputEdit{
   border-radius: 0%;
   border-color: black;
-  
+
 }
 
 .dropColor{
