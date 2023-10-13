@@ -26,7 +26,7 @@ export class DetialsComponent {
   }
 
   getImage(photo: String): String {
-    console.log(photo);
+    //console.log(photo);
 
     return `http://127.0.0.1:4000/img/courses/${photo}`;
   }
@@ -35,16 +35,16 @@ export class DetialsComponent {
     this.coursesServ.getCourseById(this.Course._id).subscribe((data: any) => {
       this.Course = data.data.course;
       // console.log(this.Course.photo)
-      console.log(data.data.course);
+      //console.log(data.data.course);
     });
   }
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.id = params['courseId'];
       // Use the id in your component logic
-      console.log('params', this.id);
+      //console.log('params', this.id);
       this.Course._id = this.id;
-      console.log('courseDetialsID', this.Course._id);
+      //console.log('courseDetialsID', this.Course._id);
       this.getCourseInfo();
 
       this.coursesServ.getAllCourses().subscribe((data: any) => {
@@ -57,7 +57,7 @@ export class DetialsComponent {
   }
 
   updateCourseCOMP(itemid: number) {
-    console.log(itemid);
+    //console.log(itemid);
 
     this.router.navigate([`UpdateCourse/${itemid}`]);
   }
@@ -66,14 +66,14 @@ export class DetialsComponent {
     let confirmed = confirm('Do you want delete this');
     if (confirmed) {
       this.coursesServ.deleteCourse(itemid).subscribe();
-      console.log('Done');
-      console.log(itemid);
+      //console.log('Done');
+      //console.log(itemid);
 
       this.router.navigate(['courses/']);
 
       this.coursesServ.getAllCourses().subscribe((data) => {
         this.courses = data;
-        console.log('Done');
+        //console.log('Done');
       });
     }
   }
@@ -81,7 +81,7 @@ export class DetialsComponent {
   ////////////////دايما بيقرأ 0/1
   previousPrd(ID: any) {
     this.currentprdIndex = this.courses.findIndex((course) => { return course._id == ID});
-    console.log(this.currentprdIndex);
+    //console.log(this.currentprdIndex);
     const PreID = this.courses[--this.currentprdIndex]._id;
     this.router.navigate([`/Detials/${PreID}`]);
   }
@@ -90,7 +90,7 @@ export class DetialsComponent {
     this.currentprdIndex = this.courses.findIndex((course) => {
       return course._id == ID;
     });
-    console.log(this.currentprdIndex);
+    //console.log(this.currentprdIndex);
     const PreID = this.courses[++this.currentprdIndex]._id;
     this.router.navigate([`/Detials/${PreID}`]);
   }
