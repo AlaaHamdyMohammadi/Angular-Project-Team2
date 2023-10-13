@@ -40,16 +40,6 @@ export class UsersService {
   }
 
 
-
-  // getAllUsers(): Observable<iUser[]> {
-  //   return this.httpClient.get<iUser>(`${environment.BaseApiURL}/users`).pipe(
-  //     map((res: any) => res.data.documents),
-  //     map((users: iUser[]) =>
-  //       users.filter((user) => user.role === UserRole.User)
-  //     )
-  //   );
-  // }
-
   getAllUsersBySearch(searchTerm: string): Observable<iUser[]> {
     return this.getAllUsers().pipe(
       map((users) =>

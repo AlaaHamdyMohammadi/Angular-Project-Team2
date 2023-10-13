@@ -22,11 +22,7 @@ export interface ICourse {
   exercises: number;
   resources: number;
   sections: number;
-  // ContentSection?:  Array<Object>,
   NumStd?: number;
-  // learn?:  Array<Object>,
-  // requirements?:  Array<Object>,
-  // instructorId: { type: mongoose.Schema.ObjectId, ref: "User" },
   subCategory: number;
   categoryId?: number;
 }

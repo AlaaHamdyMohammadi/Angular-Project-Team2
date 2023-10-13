@@ -76,7 +76,7 @@ export class CoursesComponent implements OnInit {
   }
 
   updateCourseCOMP(itemid: number) {
-    console.log(itemid);
+    //console.log(itemid);
 
     this.router.navigate([`UpdateCourse/${itemid}`]);
   }
@@ -87,7 +87,7 @@ export class CoursesComponent implements OnInit {
     );
     if (confirmDelete) {
       this.coursesServ.deleteCourse(id).subscribe({
-        next: () => { 
+        next: () => {
           this.toaster.success('Successfully Deleted');
           this.coursesServ.getAllCourses().subscribe((data) => {
             this.courses = data;

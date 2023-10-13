@@ -14,15 +14,13 @@ export class InterceptorService implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     console.log(req)
-    const token = localStorage.getItem('token'); // Change this based on your storage method
+    const token = localStorage.getItem('token');
 
-    // If a token is available, add it to the request headers
     if (token) {
       const headers = req.headers.set('Authorization', `Bearer ${token}`);
       const authReq = req.clone({ headers });
       return next.handle(authReq);
     }
-    // Pass the modified request to the next handler
     return next.handle(req);
   }
 }

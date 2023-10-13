@@ -42,7 +42,7 @@ export class CategoriesService {
     return this.httpClient.get<iCategory>(
       `${environment.BaseApiURL}/categories/${categoryId}`
     );
-  } 
+  }
 
   creatCategory(newCategory: FormData): Observable<any> {
     return this.httpClient.post<any>(
@@ -51,7 +51,7 @@ export class CategoriesService {
     );
   }
 
-  //
+  
   updateCategory(updateCategory: FormData, id: number) {
     console.log('in service', id);
     return this.httpClient.patch<any>(

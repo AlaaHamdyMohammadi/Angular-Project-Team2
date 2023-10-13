@@ -21,7 +21,7 @@ export class CoursesService {
       .pipe(map((res: any) => res.data.courses));
   }
 
-  //: Observable<ICourse[]>
+  
   getAllCourses(page: number = 1, limit: number = 15): Observable<ICourse[]> {
     const params = new HttpParams()
       .set('page', page.toString())
@@ -54,7 +54,7 @@ export class CoursesService {
     );
   }
 
-  //
+
   updateCourse(updateCourse: FormData, id: number) {
     console.log('in service', id);
     return this.httpClient.patch<any>(
@@ -62,7 +62,7 @@ export class CoursesService {
       updateCourse
     );
   }
-  //
+
   deleteCourse(removeCourseId: number): Observable<void> {
     console.log(removeCourseId);
     return this.httpClient.delete<void>(

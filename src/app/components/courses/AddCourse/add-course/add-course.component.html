@@ -6,7 +6,7 @@
           <div class="col-12">
             <h2 class="tm-block-title text-dark d-inline-block">Add Course</h2>
           </div>
-         </div>
+        </div>
         <div class="row tm-edit-product-row">
           <form
             action=""
@@ -26,7 +26,6 @@
                   class="mb-2 custom-input form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.title"
                   #title="ngModel"
-
                   [ngClass]="{
                     'is-invalid':
                       (title.touched || title.dirty) && title.invalid
@@ -276,21 +275,8 @@
             </div>
 
             <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
-              <div class="mx-auto">
-                <!-- <img
-                  [src]="getImage()"
-                  class="w-100 h-50"
-                  alt="{{ Course.title }}"
-                /> -->
-
-                <!-- <input
-                  type="file"
-                  name="image"
-                  (change)="selectImage($event)"
-                /> -->
-              </div>
+              <div class="mx-auto"></div>
               <div class="mt-4 mb-2">
-                <!-- <input id="fileInput" type="file" style="display:none;" /> -->
                 <input
                   type="file"
                   class="editBtn col-12 text-uppercase mx-auto"
@@ -525,7 +511,6 @@
               </div>
             </div>
             <div class="row">
-              <!-- <button type="submit" class=" editBtn col-12 text-uppercase" [hidden]="Courseform.invalid">Add Course Now</button> -->
               <button type="submit" class="editBtn col-12 ml-3 text-uppercase">
                 Add Course Now
               </button>
