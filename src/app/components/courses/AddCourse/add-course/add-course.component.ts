@@ -8,46 +8,43 @@ import { iSubCategory } from 'src/app/Models/iSubCategory';
 import { CategoriesService } from 'src/app/Services/categories.service';
 import { CoursesService } from 'src/app/Services/courses.service';
 import { SubCategoriesService } from 'src/app/Services/sub-categories.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-course',
   templateUrl: './add-course.component.html',
-  styleUrls: ['./add-course.component.css']
+  styleUrls: ['./add-course.component.css'],
 })
 export class AddCourseComponent {
+  images: any;
+  formData: FormData;
 
-  images:any;
-  // multipleImages = [];
-  formData:FormData;
-
-  constructor(private coursesServ: CoursesService,private categoriesServ:CategoriesService,
-    private SubCategoriesServ:SubCategoriesService
-    ,private router:Router){
+  constructor(
+    private coursesServ: CoursesService,
+    private categoriesServ: CategoriesService,
+    private SubCategoriesServ: SubCategoriesService,
+    private router: Router,
+    private toaster: ToastrService
+  ) {
     this.formData = new FormData();
   }
 
+  Course: ICourse = {} as ICourse;
 
-
-  Course:ICourse = {} as ICourse;
-
-  categories: iCategory[] = [] ;
-  Subcategories: iSubCategory[] = [] ;
-
+  categories: iCategory[] = [];
+  Subcategories: iSubCategory[] = [];
 
   ngOnInit(): void {
     // this.spinner.show();
 
     this.categoriesServ.getAllCategories().subscribe((data) => {
-      console.log('dataa categories',data);
+      //console.log('dataa categories', data);
       this.categories = data;
       // this.spinner.hide();
     });
 
-
-
-
     this.SubCategoriesServ.getAllSubCategories().subscribe((data) => {
-      console.log('dataa Subcategories',data);
+      //console.log('dataa Subcategories', data);
       this.Subcategories = data;
       // this.spinner.hide();
     });
@@ -55,45 +52,30 @@ export class AddCourseComponent {
 
   onOptionChange(event: any) {
     this.Course.categoryId = event.target.value;
-    console.log(this.Course.categoryId)
-    console.log(event.target.value)
+    console.log(this.Course.categoryId);
+    console.log(event.target.value);
   }
-
 
   onOptionChangeSUB(event: any) {
     this.Course.subCategory = event.target.value;
-    console.log(this.Course.subCategory)
-    console.log(event.target.value)
+    console.log(this.Course.subCategory);
+    console.log(event.target.value);
   }
- file:any={};
-  selectImage(event:any):void {
+  file: any = {};
+  selectImage(event: any): void {
     // const formData = new FormData();
 
     if (event.target.files.length > 0) {
       this.file = event.target.files[0];
-    //   this.images = file;
-    console.log(this.file.name);
+      //   this.images = file;
+      console.log(this.file.name);
 
-    this.formData.append('photo',this.file)
-
-
+      this.formData.append('photo', this.file);
     }
-// const file = files.item(0);
+    // const file = files.item(0);
   }
-  // async function fetchData() {
-  //   try {
-  //     const response = await fetch('https://api.example.com/data');
-  //     const data = await response.json();
-  //     return data;
-  //   } catch (error) {
-  //     console.log('Error:', error);
-  //     throw error;
-  //   }
-  // }
- getImage(): String{
 
-
-
+  getImage(): String {
     return `http://127.0.0.1:4000/img/courses/${this.file.name}`;
   }
 
@@ -102,12 +84,7 @@ export class AddCourseComponent {
   // for (let i in this.form_data.info) {
   //   formData.append(i,this.form_data.info[i]);
   // }
-  addNewCourse(formDatae:any):void{
-    // const formData = new FormData();
-    // formData.append('photo', this.images);
-    //  console.log(this.Course.photo)
-    //  console.log(this.Course)
-    console.log('tttttttttttttttttttttttttttt',this.formData)
+  addNewCourse(formDatae: any): void {
     this.formData.append('title', formDatae.value.title);
     this.formData.append('subTitle', formDatae.value.subTitle);
     this.formData.append('instructor', formDatae.value.instructor);
@@ -130,72 +107,25 @@ export class AddCourseComponent {
     this.formData.append('categoryId', formDatae.value.categoryId);
     this.formData.append('subCategory', formDatae.value.subCategory);
 
-     console.log('ih adddddddddddd')
-     console.log('categoryId',formDatae.value.categoryId);
-     console.log('subCategory',formDatae.value.subCategory);
+    console.log('ih adddddddddddd');
+    console.log('categoryId', formDatae.value.categoryId);
+    console.log('subCategory', formDatae.value.subCategory);
 
-     console.log(formDatae.value.title);
+    console.log(formDatae.value.title);
 
-     console.log(this.formData);
+    console.log(this.formData);
 
     this.coursesServ.creatCourse(this.formData).subscribe(
+      {
+        next: () => {
+          this.toaster.success('Successfully Added');
+          this.router.navigate(['/courses']);
+        },
 
-      // response =>{
-      //    console.log("secess",response);
-
-      // },
-      // error =>{
-      //   console.log("failed",error);
-
-      // }
-          {
-            next:()=>{
-              console.log('test creatttttttttttttt');
-
-
-                  this.router.navigate(['/courses'])
-            },
-
-            error:(err)=>{
-              console.log(err);
-
-            }
-          }
-        )
+        error: (err) => {
+          console.log(err);
+        },
+      }
+    );
   }
-  //
-
-
-  // addNewCourse(){
-  //   // const formData = new FormData();
-  //   // formData.append('photo', this.images);
-  //   //  console.log(this.Course.photo)
-  //   //  console.log(this.Course)
-  //   //  console.log('ih adddddddddddd')
-
-
-
-  //   this.coursesServ.creatCourse(this.Course).subscribe(
-
-
-
-  //         {
-  //           next:(Course)=>{
-  //             console.log('test creatttttttttttttt');
-
-  //             console.log(Course.photo);
-
-  //                 // this.router.navigate(['/courses'])
-  //           },
-
-  //           error:(err)=>{
-  //             console.log(err);
-
-  //           }
-  //         }
-  //       )
-  // }
-  //
-
-
 }

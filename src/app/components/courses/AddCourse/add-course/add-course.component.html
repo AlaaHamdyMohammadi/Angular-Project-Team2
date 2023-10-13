@@ -23,9 +23,10 @@
                   id="title"
                   name="title"
                   type="text"
-                  class="mb-2 form-control inputEdit border border-1 border-black validate"
+                  class="mb-2 custom-input form-control inputEdit border border-1 border-black validate"
                   [(ngModel)]="Course.title"
                   #title="ngModel"
+
                   [ngClass]="{
                     'is-invalid':
                       (title.touched || title.dirty) && title.invalid
@@ -525,7 +526,7 @@
             </div>
             <div class="row">
               <!-- <button type="submit" class=" editBtn col-12 text-uppercase" [hidden]="Courseform.invalid">Add Course Now</button> -->
-              <button type="submit" class="editBtn col-12 text-uppercase">
+              <button type="submit" class="editBtn col-12 ml-3 text-uppercase">
                 Add Course Now
               </button>
             </div>
